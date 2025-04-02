@@ -113,7 +113,7 @@ export default function BaliLandingPage() {
           {/* Background image that spans full width */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/landscape-home.jpg"
+              src="https://km5y5f9q5mypm8nr.public.blob.vercel-storage.com/images/landscape-home-fdOR56JgZuSgmnS2dsu46115t0SfTE.jpg"
               alt="Dry landscape in Bali with traditional elements"
               fill
               priority
