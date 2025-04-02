@@ -164,45 +164,190 @@ export default function BaliLandingPage() {
         </section>
 
         {/* Metrics Section */}
-        <section className="w-full py-20 bg-[#d8d4c5]">
-          <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <section className="w-full py-20 bg-[#d8d4c5] relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-32 h-32 border border-[#c4a76c]/30 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-48 h-48 border border-[#c4a76c]/20 rounded-full translate-x-1/4 translate-y-1/4"></div>
+
+        <div className="container px-4 md:px-6 relative">
+          <div className="max-w-3xl mx-auto mb-12 text-center">
+            <div className="w-16 h-[2px] bg-[#c4a76c] mx-auto mb-6"></div>
+            <h2 className="text-3xl font-light tracking-wide text-[#3c4a3a] mb-4">OUR JOURNEY IN NUMBERS</h2>
+            <p className="text-[#3c4a3a]/80">
+              For over a decade, we've been creating transformative experiences across Bali's sacred landscapes
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            {/* Travelers */}
+            <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-300 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="text-5xl font-extralight text-[#262b22] mb-1">17,508</div>
-                <div className="text-sm font-medium text-[#5d6152] mb-3">TRAVELERS</div>
+                <div className="w-16 h-16 rounded-full bg-[#3c4a3a]/10 flex items-center justify-center mb-4 group-hover:bg-[#3c4a3a]/20 transition-colors duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#3c4a3a]"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#3c4a3a] transition-colors duration-300">
+                  <span className="inline-block" data-count="17508">
+                    17,508
+                  </span>
+                </div>
+                <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">TRAVELERS</div>
                 <p className="text-sm text-[#262b22]/70 leading-relaxed">
                   Happy travelers who have experienced our Bali tours
                 </p>
               </div>
+            </div>
+
+            {/* Satisfaction */}
+            <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-300 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="text-5xl font-extralight text-[#262b22] mb-1">
-                  98<span className="text-3xl">%</span>
+                <div className="w-16 h-16 rounded-full bg-[#3c4a3a]/10 flex items-center justify-center mb-4 group-hover:bg-[#3c4a3a]/20 transition-colors duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#3c4a3a]"
+                  >
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                  </svg>
                 </div>
-                <div className="text-sm font-medium text-[#5d6152] mb-3">SATISFACTION</div>
+                <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#3c4a3a] transition-colors duration-300">
+                  <span className="inline-block" data-count="98">
+                    98
+                  </span>
+                  <span className="text-3xl">%</span>
+                </div>
+                <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">SATISFACTION</div>
                 <p className="text-sm text-[#262b22]/70 leading-relaxed">Satisfaction rate from our customer reviews</p>
               </div>
+            </div>
+
+            {/* Area */}
+            <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-300 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="text-5xl font-extralight text-[#262b22] mb-1">1,250</div>
-                <div className="text-sm font-medium text-[#5d6152] mb-3">KM²</div>
+                <div className="w-16 h-16 rounded-full bg-[#3c4a3a]/10 flex items-center justify-center mb-4 group-hover:bg-[#3c4a3a]/20 transition-colors duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#3c4a3a]"
+                  >
+                    <path d="M15 21v-4a2 2 0 0 1 2-2h4"></path>
+                    <path d="M7 4v2a3 3 0 0 0 3 3h0a2 2 0 0 1 2 2v0"></path>
+                    <path d="M3 11v2a3 3 0 0 0 3 3h0"></path>
+                    <path d="M21 3a9 9 0 0 0-9 9"></path>
+                    <path d="M3 21a9 9 0 0 1 9-9"></path>
+                  </svg>
+                </div>
+                <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#3c4a3a] transition-colors duration-300">
+                  <span className="inline-block" data-count="1250">
+                    1,250
+                  </span>
+                </div>
+                <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">KM²</div>
                 <p className="text-sm text-[#262b22]/70 leading-relaxed">Area of Bali we've explored and documented</p>
               </div>
+            </div>
+
+            {/* Destinations */}
+            <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-300 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="text-5xl font-extralight text-[#262b22] mb-1">127</div>
-                <div className="text-sm font-medium text-[#5d6152] mb-3">DESTINATIONS</div>
+                <div className="w-16 h-16 rounded-full bg-[#3c4a3a]/10 flex items-center justify-center mb-4 group-hover:bg-[#3c4a3a]/20 transition-colors duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#3c4a3a]"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#3c4a3a] transition-colors duration-300">
+                  <span className="inline-block" data-count="127">
+                    127
+                  </span>
+                </div>
+                <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">DESTINATIONS</div>
                 <p className="text-sm text-[#262b22]/70 leading-relaxed">
                   Unique destinations included in our tour packages
                 </p>
               </div>
+            </div>
+
+            {/* Years */}
+            <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-300 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="text-5xl font-extralight text-[#262b22] mb-1">12</div>
-                <div className="text-sm font-medium text-[#5d6152] mb-3">YEARS</div>
+                <div className="w-16 h-16 rounded-full bg-[#3c4a3a]/10 flex items-center justify-center mb-4 group-hover:bg-[#3c4a3a]/20 transition-colors duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#3c4a3a]"
+                  >
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                    <line x1="16" x2="16" y1="2" y2="6"></line>
+                    <line x1="8" x2="8" y1="2" y2="6"></line>
+                    <line x1="3" x2="21" y1="10" y2="10"></line>
+                    <path d="m9 16 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#3c4a3a] transition-colors duration-300">
+                  <span className="inline-block" data-count="12">
+                    12
+                  </span>
+                </div>
+                <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">YEARS</div>
                 <p className="text-sm text-[#262b22]/70 leading-relaxed">
                   Experience creating unforgettable Bali journeys
                 </p>
               </div>
             </div>
           </div>
-        </section>
+
+          {/* Optional: Add a subtle pattern overlay */}
+          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] opacity-5 pointer-events-none"></div>
+        </div>
+      </section>
 
         {/* License to Live Section */}
         <section className="w-full py-20 bg-[#e8e3d7]">
