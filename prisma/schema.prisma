@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  password    String
+  name        String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Image {
+  id          String   @id @default(uuid())
+  name        String?
+  size        Int?
+  type        String?
+  alt         String?
+  url         String?
+  createdAt   DateTime? @default(now())
+  updatedAt   DateTime? @updatedAt
+  width       Int?
+  height      Int?
+  thumbnailUrl String?
+}
+
+// prisma/schema.prisma
+model Partner {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  website     String?
+  logo        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  partners    PartnerDetailsSection[] @relation("PartnerToSections")
+}
+
+model PartnerDetailsSection{
+  id          String   @id @default(uuid())
+  title       String
+  content     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  partner     Partner  @relation("PartnerToSections",fields: [partnerId], references: [id])
+  partnerId   String
+}
+
+model Metric {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  value       Float
+  unit        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Author{
+  id          String   @id @default(uuid())
+  name        String
+  bio         String
+  imageUrl    String?
+  imageTag    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  articles    Article[] @relation("AuthorToArticles")
+}
+
+model Article{
+  id          String   @id @default(uuid())
+  title       String
+  summary     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tag         String?
+  imageUrl    String?
+  imageTage   String?
+  sections    ArticleSection[] @relation("ArticleToSections")
+  author      Author          @relation("AuthorToArticles", fields: [authorId], references: [id])
+  authorId    String
+}
+
+model ArticleSection{
+  id          String   @id @default(uuid())
+  title       String
+  content     String
+  createdAt   DateTime @default(now())
+  article     Article  @relation("ArticleToSections", fields: [articleId], references: [id])
+  articleId   String
+}
+
