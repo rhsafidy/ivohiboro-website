@@ -113,7 +113,7 @@ export default function BaliLandingPage() {
           {/* Background image that spans full width */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/placeholder.svg?height=1080&width=1920"
+              src="/images/landscape-home.jpg"
               alt="Dry landscape in Bali with traditional elements"
               fill
               priority
@@ -125,7 +125,7 @@ export default function BaliLandingPage() {
           <div className="relative z-10 container mx-auto px-4 md:px-6 h-screen flex items-center">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Content Column */}
-              <div className="lg:col-span-6 xl:col-span-5 bg-[#e8e3d7]/90 p-8 lg:p-12 backdrop-blur-sm">
+              <div className="lg:col-span-6 xl:col-span-5 bg-[#e8e3d7]/60 p-8 lg:p-12 backdrop-blur-sm">
                 <div className="max-w-2xl">
                   <div className="w-20 h-[2px] bg-[#c4a76c] mb-6"></div>
                   <h2 className="text-sm font-light tracking-widest text-[#5d6152] mb-2">WELCOME TO</h2>
