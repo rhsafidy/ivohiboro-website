@@ -1,8 +1,8 @@
 'use client';
 
 import { SessionProvider } from 'next-auth/react';
-import { AdminLayout } from '@/main/app/(pages)/(connected)/admin/_layout/layout';
-import { useFileUpload } from '@/main/app/utils/upload/vercel-client-upload';
+import { AdminLayout } from 'src/app/_layout/layout';
+import { useFileUpload } from '@/hooks/vercel-client-upload';
 
 const breadcrumbs = [
   { label: 'Building Your Application', href: '#', showOnMobile: false },
