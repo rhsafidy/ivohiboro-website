@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -14,6 +10,10 @@ body {
 
 @layer base {
   :root {
+    --font-nauryz-redkeds: 'Nauryz Redkeds', sans-serif;
+    --font-satoshi: 'Satoshi', sans-serif;
+    --font-satoshi-italic: 'Satoshi Italic', sans-serif;
+    --font-limelight: 'Limelight', cursive;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -82,6 +82,19 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
+
+body {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+}
+
+.font-nauryz {
+  font-family: var(--font-nauryz-redkeds);
+}
+
+.font-limelight {
+  font-family: var(--font-limelight);
 }
 
 @layer base {
