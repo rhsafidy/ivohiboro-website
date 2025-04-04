@@ -1,83 +1,85 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, Filter, Search } from "lucide-react"
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ChevronRight, Filter, Heart, Search } from 'lucide-react';
 
 // Gallery image data with categories
 const galleryImages = [
   {
     id: 1,
-    title: "Sacred Water Temple",
-    description: "Ancient temple nestled in the mountains of Bali",
-    category: "temples",
+    title: 'Ring-tailed Lemur Haven',
+    description:
+      'Iconic lemurs resting in the dry rainforest canopy of Ivohiboro',
+    category: 'wildlife',
     featured: true,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 2,
-    title: "Golden Hour Rice Terraces",
-    description: "Serene rice terraces during golden hour",
-    category: "nature",
+    title: 'Birdsong in the Mist',
+    description: 'Rare endemic birds calling through the morning mist',
+    category: 'wildlife',
     featured: false,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 3,
-    title: "Traditional Ceremony",
-    description: "Traditional Balinese ceremony in progress",
-    category: "culture",
+    title: 'Community Wisdom Circle',
+    description: 'Local elders sharing stories and ancestral knowledge',
+    category: 'culture',
     featured: true,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 4,
-    title: "Besakih Temple",
-    description: "The Mother Temple of Bali",
-    category: "temples",
+    title: 'Sacred Baobab Grove',
+    description: 'Ancestral trees worshipped by the community',
+    category: 'spiritual',
     featured: false,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 5,
-    title: "Meditation Space",
-    description: "Tranquil space for spiritual practice",
-    category: "spiritual",
+    title: 'Forest Shrine',
+    description: 'Remote shrine blending into the Ivohiboro landscape',
+    category: 'spiritual',
     featured: true,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 6,
-    title: "Balinese Dancer",
-    description: "Traditional dancer in ceremonial attire",
-    category: "culture",
+    title: 'Traditional Harvest Dance',
+    description:
+      'Community celebration after successful foraging and gathering',
+    category: 'culture',
     featured: false,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 7,
-    title: "Volcanic Landscape",
-    description: "Dramatic view of Mount Batur",
-    category: "nature",
+    title: 'Diverse Forest Layers',
+    description: 'From ferns to tall canopies: a biodiversity-rich rainforest',
+    category: 'landscape',
     featured: false,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 8,
-    title: "Healing Ritual",
-    description: "Traditional purification ceremony",
-    category: "spiritual",
+    title: 'Spiritual Cleansing Ceremony',
+    description: 'Traditional healing and blessing rituals deep in the forest',
+    category: 'spiritual',
     featured: false,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
   {
     id: 9,
-    title: "Hidden Waterfall",
-    description: "Secret waterfall in the jungle",
-    category: "nature",
+    title: 'Hidden Jungle Pool',
+    description: 'A secret freshwater oasis surrounded by ancient flora',
+    category: 'landscape',
     featured: true,
-    src: "/placeholder.svg?height=800&width=800",
+    src: '/placeholder.svg?height=800&width=800',
   },
-]
+];
 
 export default function GalleryPage() {
   return (
@@ -98,11 +100,11 @@ export default function GalleryPage() {
         <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
             <div className="w-20 h-[2px] bg-[#c4a76c] mb-6"></div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-[#e8e4d5] mb-6">
-              Visual Journey
+            <h1 className="text-4xl md:text-5xl font-nauryz lg:text-6xl font-light tracking-wide text-[#e8e4d5] mb-6">
+              Gallery
             </h1>
             <p className="text-lg text-[#e8e4d5]/90 font-light leading-relaxed">
-              Experience the beauty of Bali's dry landscapes, from golden rice terraces to ancient stone temples.
+              Experience the beauty of Ivohiboro.
             </p>
           </div>
         </div>
@@ -116,7 +118,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Filter Section */}
-      <section className="py-12 bg-[#d8d4c5]">
+      {/* <section className="py-12 bg-[#d8d4c5]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="w-full md:w-auto">
@@ -131,29 +133,48 @@ export default function GalleryPage() {
             </div>
 
             <div className="flex flex-wrap gap-3 w-full md:w-auto justify-center md:justify-end">
-              <Button variant="outline" className="border-[#3c4a3a] text-[#3c4a3a] hover:bg-[#3c4a3a] hover:text-white">
+              <Button
+                variant="outline"
+                className="border-[#3c4a3a] text-[#3c4a3a] hover:bg-[#3c4a3a] hover:text-white"
+              >
                 All
               </Button>
-              <Button variant="ghost" className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10">
+              <Button
+                variant="ghost"
+                className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10"
+              >
                 Temples
               </Button>
-              <Button variant="ghost" className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10">
+              <Button
+                variant="ghost"
+                className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10"
+              >
                 Nature
               </Button>
-              <Button variant="ghost" className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10">
+              <Button
+                variant="ghost"
+                className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10"
+              >
                 Culture
               </Button>
-              <Button variant="ghost" className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10">
+              <Button
+                variant="ghost"
+                className="text-[#3c4a3a]/70 hover:text-[#3c4a3a] hover:bg-[#3c4a3a]/10"
+              >
                 Spiritual
               </Button>
-              <Button variant="outline" size="icon" className="border-[#3c4a3a] text-[#3c4a3a]">
+              <Button
+                variant="outline"
+                size="icon"
+                className="border-[#3c4a3a] text-[#3c4a3a]"
+              >
                 <Filter className="h-4 w-4" />
                 <span className="sr-only">Filter</span>
               </Button>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Gallery Item */}
       <section className="py-12 bg-[#e8e4d5]">
@@ -162,7 +183,7 @@ export default function GalleryPage() {
             <div className="relative">
               <div className="aspect-[4/3] w-full overflow-hidden">
                 <Image
-                  src={galleryImages[0].src || "/placeholder.svg"}
+                  src={galleryImages[0].src || '/placeholder.svg'}
                   alt={galleryImages[0].title}
                   width={800}
                   height={600}
@@ -175,17 +196,23 @@ export default function GalleryPage() {
             </div>
 
             <div className="p-6 md:p-0">
-              <span className="text-sm text-[#c4a76c] uppercase tracking-wider">Featured</span>
-              <h2 className="text-3xl font-light tracking-wide text-[#3c4a3a] mt-2 mb-4">{galleryImages[0].title}</h2>
+              <span className="text-sm text-[#c4a76c] uppercase tracking-wider">
+                Featured
+              </span>
+              <h2 className="text-3xl font-light tracking-wide text-[#3c4a3a] mt-2 mb-4">
+                {galleryImages[0].title}
+              </h2>
               <p className="text-[#3c4a3a]/80 mb-8 leading-relaxed">
-                Water is revered as a sacred element in Balinese Hindu culture, representing purification, healing, and
-                spiritual transformation. Throughout the island, ancient water temples (known as "Pura Tirta") serve as
-                sacred sites where locals and spiritual seekers participate in purification rituals that have remained
-                largely unchanged for centuries.
+                Water is revered as a sacred element in Balinese Hindu culture,
+                representing purification, healing, and spiritual
+                transformation. Throughout the island, ancient water temples
+                (known as "Pura Tirta") serve as sacred sites where locals and
+                spiritual seekers participate in purification rituals that have
+                remained largely unchanged for centuries.
               </p>
-              <Button className="rounded-none bg-[#3c4a3a] text-white hover:bg-[#2a362a] px-8 py-3 h-auto text-sm tracking-widest">
+              {/* <Button className="rounded-none bg-[#3c4a3a] text-white hover:bg-[#2a362a] px-8 py-3 h-auto text-sm tracking-widest">
                 VIEW DETAILS
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -198,101 +225,129 @@ export default function GalleryPage() {
             {/* First row - 2 images */}
             <div className="relative group overflow-hidden">
               <Image
-                src={galleryImages[1].src || "/placeholder.svg"}
+                src={galleryImages[1].src || '/placeholder.svg'}
                 alt={galleryImages[1].title}
                 width={600}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#262b22]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-light text-white">{galleryImages[1].title}</h3>
-                <p className="text-white/80 text-sm">{galleryImages[1].description}</p>
+                <h3 className="text-xl font-light text-white">
+                  {galleryImages[1].title}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {galleryImages[1].description}
+                </p>
               </div>
             </div>
 
             <div className="relative group overflow-hidden md:col-span-2">
               <Image
-                src={galleryImages[2].src || "/placeholder.svg"}
+                src={galleryImages[2].src || '/placeholder.svg'}
                 alt={galleryImages[2].title}
                 width={1200}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#262b22]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-light text-white">{galleryImages[2].title}</h3>
-                <p className="text-white/80 text-sm">{galleryImages[2].description}</p>
+                <h3 className="text-xl font-light text-white">
+                  {galleryImages[2].title}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {galleryImages[2].description}
+                </p>
               </div>
             </div>
 
             {/* Second row - 3 images */}
             <div className="relative group overflow-hidden md:col-span-2">
               <Image
-                src={galleryImages[3].src || "/placeholder.svg"}
+                src={galleryImages[3].src || '/placeholder.svg'}
                 alt={galleryImages[3].title}
                 width={1200}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#262b22]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-light text-white">{galleryImages[3].title}</h3>
-                <p className="text-white/80 text-sm">{galleryImages[3].description}</p>
+                <h3 className="text-xl font-light text-white">
+                  {galleryImages[3].title}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {galleryImages[3].description}
+                </p>
               </div>
             </div>
 
             <div className="relative group overflow-hidden">
               <Image
-                src={galleryImages[4].src || "/placeholder.svg"}
+                src={galleryImages[4].src || '/placeholder.svg'}
                 alt={galleryImages[4].title}
                 width={600}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#262b22]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-light text-white">{galleryImages[4].title}</h3>
-                <p className="text-white/80 text-sm">{galleryImages[4].description}</p>
+                <h3 className="text-xl font-light text-white">
+                  {galleryImages[4].title}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {galleryImages[4].description}
+                </p>
               </div>
             </div>
 
             {/* Third row - 3 images */}
             <div className="relative group overflow-hidden">
               <Image
-                src={galleryImages[5].src || "/placeholder.svg"}
+                src={galleryImages[5].src || '/placeholder.svg'}
                 alt={galleryImages[5].title}
                 width={600}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#262b22]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-light text-white">{galleryImages[5].title}</h3>
-                <p className="text-white/80 text-sm">{galleryImages[5].description}</p>
+                <h3 className="text-xl font-light text-white">
+                  {galleryImages[5].title}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {galleryImages[5].description}
+                </p>
               </div>
             </div>
 
             <div className="relative group overflow-hidden">
               <Image
-                src={galleryImages[6].src || "/placeholder.svg"}
+                src={galleryImages[6].src || '/placeholder.svg'}
                 alt={galleryImages[6].title}
                 width={600}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#262b22]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-light text-white">{galleryImages[6].title}</h3>
-                <p className="text-white/80 text-sm">{galleryImages[6].description}</p>
+                <h3 className="text-xl font-light text-white">
+                  {galleryImages[6].title}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {galleryImages[6].description}
+                </p>
               </div>
             </div>
 
             <div className="relative group overflow-hidden">
               <Image
-                src={galleryImages[7].src || "/placeholder.svg"}
+                src={galleryImages[7].src || '/placeholder.svg'}
                 alt={galleryImages[7].title}
                 width={600}
                 height={600}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#262b22]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-light text-white">{galleryImages[7].title}</h3>
-                <p className="text-white/80 text-sm">{galleryImages[7].description}</p>
+                <h3 className="text-xl font-light text-white">
+                  {galleryImages[7].title}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {galleryImages[7].description}
+                </p>
               </div>
             </div>
           </div>
@@ -309,9 +364,11 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Collections */}
-      <section className="py-16 bg-[#d8d4c5]">
+      {/* <section className="py-16 bg-[#d8d4c5]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-light tracking-wide text-center text-[#3c4a3a] mb-12">COLLECTIONS</h2>
+          <h2 className="text-3xl font-light tracking-wide text-center text-[#3c4a3a] mb-12">
+            COLLECTIONS
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group relative overflow-hidden">
@@ -325,9 +382,16 @@ export default function GalleryPage() {
                 />
               </div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#262b22]/80 via-[#262b22]/30 to-transparent">
-                <h3 className="text-2xl font-light text-white mb-2">Sacred Temples</h3>
-                <p className="text-white/80 mb-6">Explore Bali's ancient spiritual centers</p>
-                <Link href="#" className="inline-flex items-center text-[#c4a76c] group-hover:underline">
+                <h3 className="text-2xl font-light text-white mb-2">
+                  Sacred Temples
+                </h3>
+                <p className="text-white/80 mb-6">
+                  Explore Bali's ancient spiritual centers
+                </p>
+                <Link
+                  href="#"
+                  className="inline-flex items-center text-[#c4a76c] group-hover:underline"
+                >
                   <span>View Collection</span>
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
@@ -345,9 +409,16 @@ export default function GalleryPage() {
                 />
               </div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#262b22]/80 via-[#262b22]/30 to-transparent">
-                <h3 className="text-2xl font-light text-white mb-2">Natural Landscapes</h3>
-                <p className="text-white/80 mb-6">Discover Bali's breathtaking scenery</p>
-                <Link href="#" className="inline-flex items-center text-[#c4a76c] group-hover:underline">
+                <h3 className="text-2xl font-light text-white mb-2">
+                  Natural Landscapes
+                </h3>
+                <p className="text-white/80 mb-6">
+                  Discover Bali's breathtaking scenery
+                </p>
+                <Link
+                  href="#"
+                  className="inline-flex items-center text-[#c4a76c] group-hover:underline"
+                >
                   <span>View Collection</span>
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
@@ -365,9 +436,16 @@ export default function GalleryPage() {
                 />
               </div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#262b22]/80 via-[#262b22]/30 to-transparent">
-                <h3 className="text-2xl font-light text-white mb-2">Cultural Ceremonies</h3>
-                <p className="text-white/80 mb-6">Witness Bali's living traditions</p>
-                <Link href="#" className="inline-flex items-center text-[#c4a76c] group-hover:underline">
+                <h3 className="text-2xl font-light text-white mb-2">
+                  Cultural Ceremonies
+                </h3>
+                <p className="text-white/80 mb-6">
+                  Witness Bali's living traditions
+                </p>
+                <Link
+                  href="#"
+                  className="inline-flex items-center text-[#c4a76c] group-hover:underline"
+                >
                   <span>View Collection</span>
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
@@ -375,27 +453,37 @@ export default function GalleryPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#3c4a3a] text-white">
+      {/* <section className="py-16 bg-[#3c4a3a] text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-light tracking-wide mb-6">EXPERIENCE BALI</h2>
+          <h2 className="text-3xl font-light tracking-wide mb-6">
+            EXPERIENCE BALI
+          </h2>
           <p className="max-w-2xl mx-auto mb-10 leading-relaxed text-white/80">
-            Ready to see these breathtaking sights in person? Let us guide you through Bali's most sacred and beautiful
-            locations.
+            Ready to see these breathtaking sights in person? Let us guide you
+            through Bali's most sacred and beautiful locations.
           </p>
           <Button className="rounded-none bg-[#c4a76c] text-[#262b22] hover:bg-[#d3bb8e] px-8 py-3 h-auto text-sm tracking-widest">
             PLAN YOUR JOURNEY
           </Button>
         </div>
-      </section>
+      </section> */}
 
       {/* Fixed Donate Button */}
-      <div className="fixed bottom-6 right-6">
-        <Button className="bg-[#c5ad6a] text-white hover:bg-[#b39c59]">DONATE</Button>
+      <div className="fixed bottom-8 right-8 z-50">
+        <Link href={'/donate'}>
+          {' '}
+          <Button className="rounded-none bg-[#d99201] text-white hover:bg-[#27694F]/90 px-6 py-5 h-auto shadow-lg flex items-center gap-2 group transition-all duration-500 hover:scale-105 border border-[#c5ad6a]/30  hover:animate-none relative overflow-hidden">
+            <span className="absolute inset-0 bg-gradient-to-r from-[#27694F] to-[#c5ad6a] opacity-0 group-hover:opacity-80 transition-opacity duration-1000"></span>
+            <Heart className="h-5 w-5 group-hover:text-white transition-colors relative z-10" />
+            <span className="text-sm tracking-widest font-light relative z-10">
+              DONATE
+            </span>
+          </Button>
+        </Link>
       </div>
     </div>
-  )
+  );
 }
-

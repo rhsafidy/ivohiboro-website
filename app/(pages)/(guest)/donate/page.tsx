@@ -1,41 +1,42 @@
-"use client"
+'use client';
 
-import type React from "react"
+import type React from 'react';
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Textarea } from "@/components/ui/textarea"
-import { CheckCircle } from "lucide-react"
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Textarea } from '@/components/ui/textarea';
+import { CheckCircle } from 'lucide-react';
 
 export default function DonatePage() {
-  const [donationAmount, setDonationAmount] = useState<string>("50")
-  const [customAmount, setCustomAmount] = useState<string>("")
-  const [submitted, setSubmitted] = useState(false)
+  const [donationAmount, setDonationAmount] = useState<string>('50');
+  const [customAmount, setCustomAmount] = useState<string>('');
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    setSubmitted(true)
+    e.preventDefault();
+    setSubmitted(true);
 
-    // Reset form after 3 seconds
     setTimeout(() => {
-      setSubmitted(false)
-    }, 3000)
-  }
+      setSubmitted(false);
+    }, 3000);
+  };
 
   return (
     <div className="min-h-screen bg-[#e8e4d5]">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-3xl">
-          <h1 className="mb-8 text-center text-4xl font-medium tracking-wide text-[#3c4a3a]">SUPPORT OUR MISSION</h1>
+          <h1 className="mb-8 text-center text-4xl font-medium tracking-wide text-[#3c4a3a]">
+            SUPPORT IVOHIBORO
+          </h1>
 
           <div className="mb-12 text-center">
             <p className="text-[#3c4a3a]">
-              Your contribution helps us preserve Bali's cultural heritage, support local communities, and continue
-              offering transformative experiences to spiritual seekers from around the world.
+              Your donation helps us protect the unique biodiversity of
+              Ivohiboro, support local communities, and preserve sacred
+              traditions passed down through generations.
             </p>
           </div>
 
@@ -43,32 +44,43 @@ export default function DonatePage() {
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
                 <CheckCircle className="mb-4 h-16 w-16 text-green-600" />
-                <h2 className="mb-2 text-2xl font-medium text-[#3c4a3a]">Thank You!</h2>
+                <h2 className="mb-2 text-2xl font-medium text-[#3c4a3a]">
+                  Thank You!
+                </h2>
                 <p className="text-[#3c4a3a]">
-                  Your donation has been received. We appreciate your support in helping us preserve Bali's cultural
-                  heritage and spiritual traditions.
+                  Your contribution has been received. Together, we're making a
+                  difference for Ivohiboro’s forests, wildlife, and people.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="mb-8">
-                  <h2 className="mb-4 text-xl font-medium text-[#3c4a3a]">Choose Donation Amount</h2>
-                  <RadioGroup value={donationAmount} onValueChange={setDonationAmount} className="flex flex-wrap gap-4">
-                    {["25", "50", "100", "250", "custom"].map((amount) => (
+                  <h2 className="mb-4 text-xl font-medium text-[#3c4a3a]">
+                    Choose Donation Amount
+                  </h2>
+                  <RadioGroup
+                    value={donationAmount}
+                    onValueChange={setDonationAmount}
+                    className="flex flex-wrap gap-4"
+                  >
+                    {['25', '50', '100', '250', 'custom'].map((amount) => (
                       <div key={amount} className="flex items-center space-x-2">
                         <RadioGroupItem
                           value={amount}
                           id={`amount-${amount}`}
                           className="border-[#3c4a3a] text-[#3c4a3a]"
                         />
-                        <Label htmlFor={`amount-${amount}`} className="text-[#3c4a3a]">
-                          {amount === "custom" ? "Custom" : `$${amount}`}
+                        <Label
+                          htmlFor={`amount-${amount}`}
+                          className="text-[#3c4a3a]"
+                        >
+                          {amount === 'custom' ? 'Custom' : `$${amount}`}
                         </Label>
                       </div>
                     ))}
                   </RadioGroup>
 
-                  {donationAmount === "custom" && (
+                  {donationAmount === 'custom' && (
                     <div className="mt-4">
                       <Label htmlFor="custom-amount" className="text-[#3c4a3a]">
                         Enter custom amount ($)
@@ -86,7 +98,9 @@ export default function DonatePage() {
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="mb-4 text-xl font-medium text-[#3c4a3a]">Your Information</h2>
+                  <h2 className="mb-4 text-xl font-medium text-[#3c4a3a]">
+                    Your Information
+                  </h2>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
                       <Label htmlFor="first-name" className="text-[#3c4a3a]">
@@ -123,13 +137,18 @@ export default function DonatePage() {
                       <Label htmlFor="phone" className="text-[#3c4a3a]">
                         Phone (optional)
                       </Label>
-                      <Input id="phone" className="mt-1 border-[#3c4a3a]/30 bg-white focus-visible:ring-[#3c4a3a]" />
+                      <Input
+                        id="phone"
+                        className="mt-1 border-[#3c4a3a]/30 bg-white focus-visible:ring-[#3c4a3a]"
+                      />
                     </div>
                   </div>
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="mb-4 text-xl font-medium text-[#3c4a3a]">Payment Information</h2>
+                  <h2 className="mb-4 text-xl font-medium text-[#3c4a3a]">
+                    Payment Information
+                  </h2>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="md:col-span-2">
                       <Label htmlFor="card-number" className="text-[#3c4a3a]">
@@ -173,13 +192,16 @@ export default function DonatePage() {
                   </Label>
                   <Textarea
                     id="message"
-                    placeholder="Share why you're supporting The Bali Way..."
+                    placeholder="Share why you're supporting the Ivohiboro Protected Area..."
                     className="mt-1 min-h-[100px] border-[#3c4a3a]/30 bg-white focus-visible:ring-[#3c4a3a]"
                   />
                 </div>
 
                 <div className="flex justify-center">
-                  <Button type="submit" className="min-w-[200px] bg-[#3c4a3a] text-white hover:bg-[#2a362a]">
+                  <Button
+                    type="submit"
+                    className="min-w-[200px] bg-[#3c4a3a] text-white hover:bg-[#2a362a]"
+                  >
                     COMPLETE DONATION
                   </Button>
                 </div>
@@ -189,6 +211,5 @@ export default function DonatePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

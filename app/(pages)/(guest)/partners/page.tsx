@@ -1,92 +1,93 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, MapPin } from "lucide-react"
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ChevronRight, MapPin } from 'lucide-react';
 
 const partners = [
   {
     id: 1,
-    name: "Ubud Healing Center",
-    logo: "/placeholder.svg?height=120&width=120",
-    slug: "ubud-healing-center",
+    name: 'Malagasy Institute for Conservation of Tropical Environments (MICET)',
+    logo: '/placeholder.svg?height=120&width=120',
+    slug: 'micet',
     summary:
-      "A holistic wellness center offering traditional Balinese healing practices, yoga, and meditation retreats in the heart of Ubud.",
-    location: "Ubud",
+      'A leading Malagasy organization facilitating research and conservation projects throughout Madagascar, providing essential logistical support and local expertise for the Ivohiboro project.',
+    location: 'Antananarivo, Madagascar',
     featured: true,
-    image: "/placeholder.svg?height=600&width=800",
+    image: '/images/Crossandra-sp.png',
   },
   {
     id: 2,
-    name: "Bali Eco Stays",
-    logo: "/placeholder.svg?height=120&width=120",
-    slug: "bali-eco-stays",
+    name: 'Centre ValBio',
+    logo: '/placeholder.svg?height=120&width=120',
+    slug: 'centre-valbio',
     summary:
-      "Sustainable accommodation options throughout Bali, focusing on minimal environmental impact while providing authentic cultural experiences.",
-    location: "Multiple Locations",
-    featured: false,
-    image: "/placeholder.svg?height=600&width=800",
+      "A world-class research center dedicated to the study and protection of Madagascar's unique biodiversity, providing scientific expertise for our restoration techniques.",
+    location: 'Ranomafana, Madagascar',
+    featured: true,
+    image: '/images/Calumma-crypticum.png',
   },
   {
     id: 3,
-    name: "Sacred Temples Foundation",
-    logo: "/placeholder.svg?height=120&width=120",
-    slug: "sacred-temples-foundation",
+    name: 'Rainforest Trust',
+    logo: '/placeholder.svg?height=120&width=120',
+    slug: 'rainforest-trust',
     summary:
-      "Dedicated to preserving and restoring Bali's ancient temples while educating visitors about their spiritual and cultural significance.",
-    location: "Tabanan",
-    featured: true,
-    image: "/placeholder.svg?height=600&width=800",
+      "An international conservation organization that has provided critical funding and expertise for the protection of Ivohiboro's endangered species and habitat.",
+    location: 'Virginia, USA',
+    featured: false,
+    image: '/images/Ring-tailed-Lemur.png',
   },
   {
     id: 4,
-    name: "Balinese Arts Collective",
-    logo: "/placeholder.svg?height=120&width=120",
-    slug: "balinese-arts-collective",
+    name: 'Madagascar National Parks',
+    logo: '/placeholder.svg?height=120&width=120',
+    slug: 'madagascar-national-parks',
     summary:
-      "Supporting local artisans and traditional craftspeople through sustainable commerce and cultural education programs.",
-    location: "Ubud",
+      "The government agency responsible for managing Madagascar's protected areas, providing regulatory support and coordination for conservation efforts at Ivohiboro.",
+    location: 'Antananarivo, Madagascar',
     featured: false,
-    image: "/placeholder.svg?height=600&width=800",
+    image: '/images/Hypoxis-angustifolia.png',
   },
   {
     id: 5,
-    name: "Ocean Conservation Bali",
-    logo: "/placeholder.svg?height=120&width=120",
-    slug: "ocean-conservation-bali",
+    name: 'The Phoenix Conservancy',
+    logo: '/placeholder.svg?height=120&width=120',
+    slug: 'phoenix-conservancy',
     summary:
-      "Working to protect Bali's marine ecosystems through beach cleanups, coral restoration projects, and sustainable tourism practices.",
-    location: "Sanur",
+      'A non-profit organization focused on restoring critically endangered ecosystems, leading the implementation of the Foxhole Forest technique at Ivohiboro.',
+    location: 'Washington, USA',
     featured: false,
-    image: "/placeholder.svg?height=600&width=800",
+    image: '/images/images-2.png',
   },
   {
     id: 6,
-    name: "Bali Spiritual Retreats",
-    logo: "/placeholder.svg?height=120&width=120",
-    slug: "bali-spiritual-retreats",
+    name: 'Local Community Association of Ihorombe',
+    logo: '/placeholder.svg?height=120&width=120',
+    slug: 'local-community-association',
     summary:
-      "Offering guided meditation, yoga, and spiritual development programs in serene locations across the island.",
-    location: "Amed",
+      'A grassroots organization representing the communities surrounding Ivohiboro, ensuring that conservation efforts align with local needs and traditions.',
+    location: 'Ihorombe Region, Madagascar',
     featured: false,
-    image: "/placeholder.svg?height=600&width=800",
+    image: '/images/Local.People.6.png',
   },
   {
     id: 7,
-    name: "Traditional Farming Cooperative",
-    logo: "/placeholder.svg?height=120&width=120",
-    slug: "traditional-farming-cooperative",
-    summary: "Preserving ancient Balinese agricultural practices through community-supported farming initiatives.",
-    location: "Sidemen",
+    name: 'Madagascar Biodiversity Partnership',
+    logo: '/placeholder.svg?height=120&width=120',
+    slug: 'madagascar-biodiversity-partnership',
+    summary:
+      "A collaborative initiative working to document and preserve Madagascar's unique flora and fauna through community-based conservation approaches.",
+    location: 'Multiple Locations, Madagascar',
     featured: false,
-    image: "/placeholder.svg?height=600&width=800",
+    image: '/images/Crossandra-sp.png',
   },
-]
+];
 
 export default function PartnersPage() {
   // Get featured partners
-  const featuredPartners = partners.filter((partner) => partner.featured)
+  const featuredPartners = partners.filter((partner) => partner.featured);
   // Get non-featured partners
-  const regularPartners = partners.filter((partner) => !partner.featured)
+  const regularPartners = partners.filter((partner) => !partner.featured);
 
   return (
     <div className="min-h-screen bg-[#e8e4d5]">
@@ -94,8 +95,8 @@ export default function PartnersPage() {
       <section className="relative h-[50vh] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=1200&width=2000"
-            alt="Bali partnership network"
+            src="/images/Ring-tailed-Lemur.png"
+            alt="Ivohiboro conservation partnership network"
             fill
             priority
             className="object-cover filter brightness-[0.85] contrast-[1.05] saturate-[1.05]"
@@ -110,8 +111,9 @@ export default function PartnersPage() {
               Our Partners
             </h1>
             <p className="text-lg text-[#e8e4d5]/90 font-light leading-relaxed">
-              We collaborate with these exceptional organizations to create authentic, transformative experiences while
-              supporting local communities and preserving Bali's natural and cultural heritage.
+              We collaborate with these exceptional organizations to protect and
+              restore the Ivohiboro forest while supporting local communities
+              and preserving Madagascar's unique biodiversity.
             </p>
           </div>
         </div>
@@ -120,9 +122,12 @@ export default function PartnersPage() {
       {/* Featured Partners Section */}
       <section className="py-20 bg-[#e8e4d5]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-light tracking-wide text-center text-[#3c4a3a] mb-4">FEATURED PARTNERS</h2>
+          <h2 className="text-3xl font-light tracking-wide text-center text-[#3c4a3a] mb-4">
+            FEATURED PARTNERS
+          </h2>
           <p className="text-center text-[#3c4a3a]/80 max-w-3xl mx-auto mb-16">
-            These organizations exemplify our shared values of authenticity, sustainability, and transformation.
+            These organizations exemplify our shared values of ecological
+            restoration, community empowerment, and sustainable solutions.
           </p>
 
           <div className="space-y-24">
@@ -130,13 +135,15 @@ export default function PartnersPage() {
               <div
                 key={partner.id}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 0 ? "" : "lg:flex-row-reverse"
+                  index % 2 === 0 ? '' : 'lg:flex-row-reverse'
                 }`}
               >
-                <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                <div
+                  className={`relative ${index % 2 === 1 ? 'lg:order-2' : ''}`}
+                >
                   <div className="aspect-[4/3] w-full overflow-hidden">
                     <Image
-                      src={partner.image || "/placeholder.svg"}
+                      src={partner.image || '/placeholder.svg'}
                       alt={partner.name}
                       width={800}
                       height={600}
@@ -148,7 +155,7 @@ export default function PartnersPage() {
                   <div className="absolute -bottom-8 left-8 z-10 bg-white p-4 shadow-md">
                     <div className="h-16 w-16 relative">
                       <Image
-                        src={partner.logo || "/placeholder.svg"}
+                        src={partner.logo || '/placeholder.svg'}
                         alt={`${partner.name} logo`}
                         fill
                         className="object-contain"
@@ -158,19 +165,27 @@ export default function PartnersPage() {
 
                   {/* Decorative element */}
                   <div
-                    className={`absolute -bottom-6 ${index % 2 === 0 ? "-right-6" : "-left-6"} z-10 hidden md:block`}
+                    className={`absolute -bottom-6 ${
+                      index % 2 === 0 ? '-right-6' : '-left-6'
+                    } z-10 hidden md:block`}
                   >
                     <div className="w-24 h-24 border border-[#c4a76c] rounded-full"></div>
                   </div>
                 </div>
 
-                <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="flex items-center gap-2 mb-2">
                     <MapPin className="h-4 w-4 text-[#c4a76c]" />
-                    <span className="text-sm text-[#3c4a3a]/70">{partner.location}</span>
+                    <span className="text-sm text-[#3c4a3a]/70">
+                      {partner.location}
+                    </span>
                   </div>
-                  <h3 className="text-3xl font-light tracking-wide text-[#3c4a3a] mb-4">{partner.name}</h3>
-                  <p className="text-[#3c4a3a]/80 mb-8 leading-relaxed">{partner.summary}</p>
+                  <h3 className="text-3xl font-light tracking-wide text-[#3c4a3a] mb-4">
+                    {partner.name}
+                  </h3>
+                  <p className="text-[#3c4a3a]/80 mb-8 leading-relaxed">
+                    {partner.summary}
+                  </p>
                   <Link href={`/partners/${partner.slug}`}>
                     <Button className="rounded-none bg-[#3c4a3a] text-white hover:bg-[#2a362a] px-8 py-3 h-auto text-sm tracking-widest">
                       LEARN MORE
@@ -186,7 +201,9 @@ export default function PartnersPage() {
       {/* All Partners Grid */}
       <section className="py-20 bg-[#d8d4c5]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-light tracking-wide text-center text-[#3c4a3a] mb-16">ALL PARTNERS</h2>
+          <h2 className="text-3xl font-light tracking-wide text-center text-[#3c4a3a] mb-16">
+            ALL PARTNERS
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPartners.map((partner) => (
@@ -197,7 +214,7 @@ export default function PartnersPage() {
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={partner.image || "/placeholder.svg"}
+                    src={partner.image || '/placeholder.svg'}
                     alt={partner.name}
                     width={800}
                     height={600}
@@ -210,21 +227,27 @@ export default function PartnersPage() {
                   <div className="flex items-center gap-4 mb-4">
                     <div className="h-12 w-12 relative shrink-0">
                       <Image
-                        src={partner.logo || "/placeholder.svg"}
+                        src={partner.logo || '/placeholder.svg'}
                         alt={`${partner.name} logo`}
                         fill
                         className="object-contain"
                       />
                     </div>
-                    <h3 className="text-xl font-medium text-[#3c4a3a]">{partner.name}</h3>
+                    <h3 className="text-xl font-medium text-[#3c4a3a]">
+                      {partner.name}
+                    </h3>
                   </div>
 
                   <div className="flex items-center gap-2 mb-3">
                     <MapPin className="h-4 w-4 text-[#c4a76c]" />
-                    <span className="text-sm text-[#3c4a3a]/70">{partner.location}</span>
+                    <span className="text-sm text-[#3c4a3a]/70">
+                      {partner.location}
+                    </span>
                   </div>
 
-                  <p className="text-[#3c4a3a]/80 text-sm mb-4 line-clamp-3">{partner.summary}</p>
+                  <p className="text-[#3c4a3a]/80 text-sm mb-4 line-clamp-3">
+                    {partner.summary}
+                  </p>
 
                   <div className="flex items-center text-[#c4a76c] text-sm group-hover:underline mt-auto">
                     <span>View Details</span>
@@ -238,19 +261,26 @@ export default function PartnersPage() {
       </section>
 
       {/* Become a Partner Section */}
-      <section className="py-16 bg-[#3c4a3a] text-white">
+      <section className="py-16 bg-[#27694F] text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-light tracking-wide mb-6">BECOME A PARTNER</h2>
+              <h2 className="text-3xl font-light tracking-wide mb-6">
+                BECOME A PARTNER
+              </h2>
               <p className="text-white/80 mb-6 leading-relaxed">
-                Are you an organization that shares our values of authenticity, sustainability, and transformation?
-                We're always looking to expand our network of partners who are committed to preserving Bali's cultural
-                heritage and natural environment.
+                Are you an organization that shares our values of ecological
+                restoration, community empowerment, and sustainable solutions?
+                We're always looking to expand our network of partners who are
+                committed to protecting Madagascar's unique biodiversity and
+                supporting local communities.
               </p>
               <p className="text-white/80 mb-8 leading-relaxed">
-                By partnering with The Bali Way, you'll gain access to conscious travelers seeking authentic experiences
-                while contributing to our mission of sustainable tourism that benefits local communities.
+                By partnering with the Ivohiboro Conservation Project, you'll
+                contribute to the protection of endangered species, the
+                restoration of critical habitat, and the development of
+                sustainable livelihoods for some of Madagascar's most vulnerable
+                communities.
               </p>
               <Button className="rounded-none bg-[#c4a76c] text-[#262b22] hover:bg-[#d3bb8e] px-8 py-3 h-auto text-sm tracking-widest">
                 CONTACT US
@@ -260,8 +290,8 @@ export default function PartnersPage() {
             <div className="relative">
               <div className="aspect-square w-full overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=800&width=800"
-                  alt="Partnership handshake"
+                  src="/images/Local.People.6.png"
+                  alt="Community partnership in Ivohiboro"
                   width={800}
                   height={800}
                   className="w-full h-full object-cover"
@@ -279,9 +309,10 @@ export default function PartnersPage() {
 
       {/* Fixed Donate Button */}
       <div className="fixed bottom-6 right-6">
-        <Button className="bg-[#c5ad6a] text-white hover:bg-[#b39c59]">DONATE</Button>
+        <Button className="bg-[#c5ad6a] text-white hover:bg-[#b39c59]">
+          DONATE
+        </Button>
       </div>
     </div>
-  )
+  );
 }
-

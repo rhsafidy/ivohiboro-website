@@ -37,9 +37,16 @@ const shimmerAnimation = {
   },
 };
 
-export default function BaliLandingPage() {
+export default function IvohiboroLandingPage() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
+  const galleryImages = [
+    '/images/Malagasy.Bulbul.1.png',
+    '/images/Crossandra-sp.png',
+    '/images/Local.People.6.png',
+    '/images/rangers.png',
+    '/images/Calumma-crypticum.png',
+    '/images/Landscape.7.png',
+  ];
   const handleMouseEnter = (menu: string) => {
     setActiveDropdown(menu);
   };
@@ -77,7 +84,7 @@ export default function BaliLandingPage() {
           >
             <Image
               src={src || '/placeholder.svg'}
-              alt={`Slide ${index + 1}`}
+              alt={`Ivohiboro forest ${index + 1}`}
               fill
               priority
               className="object-cover filter brightness-[0.85] contrast-[1.05] saturate-[1.05]"
@@ -107,13 +114,16 @@ export default function BaliLandingPage() {
     <div className="flex min-h-screen flex-col bg-[#e8e3d7]">
       {/* Fixed Donation Button */}
       <div className="fixed bottom-8 right-8 z-50">
-        <Button className="rounded-none bg-[#27694F] text-white hover:bg-[#27694F]/90 px-6 py-5 h-auto shadow-lg flex items-center gap-2 group transition-all duration-500 hover:scale-105 border border-[#c5ad6a]/30 animate-[pulse_6s_ease-in-out_infinite] hover:animate-none relative overflow-hidden">
-          <span className="absolute inset-0 bg-gradient-to-r from-[#27694F] to-[#c5ad6a] opacity-0 group-hover:opacity-80 transition-opacity duration-1000"></span>
-          <Heart className="h-5 w-5 group-hover:text-white transition-colors relative z-10" />
-          <span className="text-sm tracking-widest font-light relative z-10">
-            DONATE
-          </span>
-        </Button>
+        <Link href={'/donate'}>
+          {' '}
+          <Button className="rounded-none bg-[#d99201] text-white hover:bg-[#27694F]/90 px-6 py-5 h-auto shadow-lg flex items-center gap-2 group transition-all duration-500 hover:scale-105 border border-[#c5ad6a]/30  hover:animate-none relative overflow-hidden">
+            <span className="absolute inset-0 bg-gradient-to-r from-[#27694F] to-[#c5ad6a] opacity-0 group-hover:opacity-80 transition-opacity duration-1000"></span>
+            <Heart className="h-5 w-5 group-hover:text-white transition-colors relative z-10" />
+            <span className="text-sm tracking-widest font-light relative z-10">
+              DONATE
+            </span>
+          </Button>
+        </Link>
       </div>
 
       {/* Header */}
@@ -125,73 +135,73 @@ export default function BaliLandingPage() {
           <nav className="flex items-center gap-4 md:gap-8">
             <div
               className="relative"
-              onMouseEnter={() => handleMouseEnter('pricing')}
+              onMouseEnter={() => handleMouseEnter('conservation')}
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                href="#pricing"
+                href="/gallery"
                 className="text-sm font-light tracking-wider text-[#e8e3d7] hover:opacity-80 flex items-center"
               >
-                PRICING
-                <ChevronDown className="ml-1 h-4 w-4" />
+                DISCOVER
+                {/* <ChevronDown className="ml-1 h-4 w-4" /> */}
               </Link>
-              {activeDropdown === 'pricing' && (
+              {/* {activeDropdown === 'conservation' && (
                 <div className="absolute right-0 md:left-0 mt-2 w-48 bg-[#e8e3d7] shadow-lg py-2 px-3 border-l-2 border-[#c5ad6a]">
                   <Link
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Standard Package
+                    Firebreaks
                   </Link>
                   <Link
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Premium Package
+                    Foxhole Forests
                   </Link>
                   <Link
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Custom Tours
+                    Social Enterprise
                   </Link>
                 </div>
-              )}
+              )} */}
             </div>
             <div
               className="relative"
-              onMouseEnter={() => handleMouseEnter('visit')}
+              onMouseEnter={() => handleMouseEnter('biodiversity')}
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                href="#visit"
+                href="/about"
                 className="text-sm font-light tracking-wider text-[#e8e3d7] hover:opacity-80 flex items-center"
               >
-                VISIT
-                <ChevronDown className="ml-1 h-4 w-4" />
+                ABOUT
+                {/* <ChevronDown className="ml-1 h-4 w-4" /> */}
               </Link>
-              {activeDropdown === 'visit' && (
+              {/* {activeDropdown === 'biodiversity' && (
                 <div className="absolute right-0 md:left-0 mt-2 w-48 bg-[#e8e3d7] shadow-lg py-2 px-3 border-l-2 border-[#c5ad6a]">
                   <Link
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Popular Destinations
+                    Flora
                   </Link>
                   <Link
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Hidden Gems
+                    Fauna
                   </Link>
                   <Link
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Seasonal Tours
+                    Ecosystem
                   </Link>
                 </div>
-              )}
+              )} */}
             </div>
             <div
               className="relative"
@@ -199,13 +209,13 @@ export default function BaliLandingPage() {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                href="#about"
+                href="/become-volunteer"
                 className="text-sm font-light tracking-wider text-[#e8e3d7] hover:opacity-80 flex items-center"
               >
-                ABOUT
-                <ChevronDown className="ml-1 h-4 w-4" />
+                GET INVOLVED
+                {/* <ChevronDown className="ml-1 h-4 w-4" /> */}
               </Link>
-              {activeDropdown === 'about' && (
+              {/* {activeDropdown === 'about' && (
                 <div className="absolute right-0 md:left-0 mt-2 w-48 bg-[#e8e3d7] shadow-lg py-2 px-3 border-l-2 border-[#c5ad6a]">
                   <Link
                     href="#"
@@ -217,22 +227,22 @@ export default function BaliLandingPage() {
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Team
+                    Partners
                   </Link>
                   <Link
                     href="#"
                     className="block py-2 text-sm text-[#262b22] hover:text-[#27694F]"
                   >
-                    Testimonials
+                    Impact
                   </Link>
                 </div>
-              )}
+              )} */}
             </div>
             <Link
-              href="#contact"
+              href="/donate"
               className="text-sm font-light tracking-wider text-[#e8e3d7] hover:opacity-80"
             >
-              CONTACT
+              DONATE
             </Link>
           </nav>
         </div>
@@ -249,7 +259,7 @@ export default function BaliLandingPage() {
               {/* Content Column */}
               <div className="lg:col-span-6 xl:col-span-5 bg-[#e8e3d7]/60 p-8 lg:p-12 backdrop-blur-sm border-l-2 border-[#c5ad6a]/50">
                 <div className="max-w-2xl">
-                  <div className="w-20 h-[4px] bg-[#c5ad6a] mb-3"></div>
+                  <div className="w-20 h-[2.5px] bg-[#d99201] mb-3"></div>
                   <h2 className="text-sm font-light tracking-widest text-[#5d6152] mb-5">
                     WELCOME TO
                   </h2>
@@ -257,20 +267,26 @@ export default function BaliLandingPage() {
                     Ivohiboro lost forest
                   </h1>
                   <p className="text-sm text-[#262b22]/100 leading-relaxed mb-8 font-[400]">
-                    Crave new adventures, mystical experiences and serene
-                    landscapes? Bali's dry season offers a unique beauty. We
-                    make sure that you'll get an experience you'll never forget.
+                    Nicknamed 'the lost forest,' the Ivohiboro protected area is
+                    a rare 1,400-hectare green oasis in Madagascar's arid
+                    Ihorombe region, rich in unique biodiversity. Discover this
+                    ecological treasure and the conservation efforts protecting
+                    it.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="rounded-none bg-[#27694F] text-[#e8e3d7] hover:bg-[#27694F]/90 px-8 py-3 h-auto text-xs tracking-widest relative overflow-hidden group">
-                      <span className="relative z-10">EXPLORE BALI</span>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="rounded-none border-[#c5ad6a] text-[#262b22] bg-[#ffffff]/80 hover:bg-[#ffffff]/60 px-8 py-3 h-auto text-xs tracking-widest"
-                    >
-                      LEARN MORE
-                    </Button>
+                    <Link href={'/gallery'}>
+                      <Button className="rounded-none bg-[#174b4c] text-[#e8e3d7] hover:bg-[#27694F]/90 px-8 py-3 h-auto text-xs tracking-widest relative overflow-hidden group">
+                        <span className="relative z-10">EXPLORE IVOHIBORO</span>
+                      </Button>
+                    </Link>
+                    <Link href={'/about'}>
+                      <Button
+                        variant="outline"
+                        className="rounded-none border-[#c5ad6a] text-[#262b22] bg-[#ffffff]/80 hover:bg-[#ffffff]/60 px-8 py-3 h-auto text-xs tracking-widest"
+                      >
+                        LEARN MORE
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -279,13 +295,6 @@ export default function BaliLandingPage() {
               <div className="hidden lg:block lg:col-span-6 xl:col-span-7"></div>
             </div>
           </div>
-
-          {/* Decorative element */}
-          {/* <div className="absolute bottom-12 right-12 z-10 hidden lg:block">
-            <div className="w-32 h-32 border border-[#c5ad6a]/30 rounded-full flex items-center justify-center animate-gentle-float">
-              <div className="w-24 h-24 border border-[#c5ad6a]/50 rounded-full"></div>
-            </div>
-          </div> */}
         </section>
 
         {/* Metrics Section */}
@@ -297,17 +306,17 @@ export default function BaliLandingPage() {
           <div className="container px-4 md:px-6 relative">
             <div className="max-w-3xl mx-auto mb-12 text-center">
               <div className="w-16 h-[2px] bg-[#c5ad6a] mx-auto mb-6"></div>
-              <h2 className="text-3xl font-light tracking-wide text-[#27694F] mb-4">
-                OUR JOURNEY IN NUMBERS
+              <h2 className="text-3xl font-light tracking-wide font-nauryz mb-4">
+                OUR IMPACTS
               </h2>
               <p className="text-[#3c4a3a]/80">
-                For over a decade, we've been creating transformative
-                experiences across Bali's sacred landscapes
+                For over 5 years, we've been working to protect and restore the
+                unique Ivohiboro forest ecosystem
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-              {/* Travelers */}
+              {/* Employment */}
               <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-500 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1 hover:border-t-2 hover:border-[#c5ad6a]">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-[#27694F]/10 flex items-center justify-center mb-4 group-hover:bg-[#27694F]/20 transition-colors duration-500 relative overflow-hidden">
@@ -330,21 +339,22 @@ export default function BaliLandingPage() {
                       <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>
                   </div>
-                  <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#27694F] transition-colors duration-500">
-                    <span className="inline-block" data-count="17508">
-                      17,508
+                  <div className="text-5xl font-extralight mb-1 group-hover:text-[#27694F] transition-colors duration-500">
+                    <span className="inline-block" data-count="10000">
+                      10,000
                     </span>
                   </div>
-                  <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">
-                    TRAVELERS
+                  <div className="text-xs font-medium text-[#5d6152] mb-3 tracking-wider">
+                    EMPLOYMENT
                   </div>
-                  <p className="text-sm text-[#262b22]/70 leading-relaxed">
-                    Happy travelers who have experienced our Bali tours
+                  <p className="text-xs text-[#262b22]/70 leading-relaxed">
+                    Local employment opportunities created during firebreak
+                    construction and maintenance
                   </p>
                 </div>
               </div>
 
-              {/* Satisfaction */}
+              {/* Foxhole Forests */}
               <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-500 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1 hover:border-t-2 hover:border-[#c5ad6a]">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-[#27694F]/10 flex items-center justify-center mb-4 group-hover:bg-[#27694F]/20 transition-colors duration-500 relative overflow-hidden">
@@ -365,21 +375,20 @@ export default function BaliLandingPage() {
                     </svg>
                   </div>
                   <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#27694F] transition-colors duration-500">
-                    <span className="inline-block" data-count="98">
-                      98
+                    <span className="inline-block" data-count="874">
+                      874
                     </span>
-                    <span className="text-3xl">%</span>
                   </div>
-                  <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">
-                    SATISFACTION
+                  <div className="text-xs font-medium text-[#5d6152] mb-3 tracking-wider">
+                    FOXHOLE FORESTS
                   </div>
-                  <p className="text-sm text-[#262b22]/70 leading-relaxed">
-                    Satisfaction rate from our customer reviews
+                  <p className="text-xs text-[#262b22]/70 leading-relaxed">
+                    Natural nurseries for forest trees installed since 2020
                   </p>
                 </div>
               </div>
 
-              {/* Area */}
+              {/* Protected Area */}
               <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-500 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1 hover:border-t-2 hover:border-[#c5ad6a]">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-[#27694F]/10 flex items-center justify-center mb-4 group-hover:bg-[#27694F]/20 transition-colors duration-500 relative overflow-hidden">
@@ -404,20 +413,21 @@ export default function BaliLandingPage() {
                     </svg>
                   </div>
                   <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#27694F] transition-colors duration-500">
-                    <span className="inline-block" data-count="1250">
-                      1,250
+                    <span className="inline-block" data-count="1400">
+                      1,400
                     </span>
                   </div>
-                  <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">
-                    KM²
+                  <div className="text-xs font-medium text-[#5d6152] mb-3 tracking-wider">
+                    HECTARES
                   </div>
-                  <p className="text-sm text-[#262b22]/70 leading-relaxed">
-                    Area of Bali we've explored and documented
+                  <p className="text-xs text-[#262b22]/70 leading-relaxed">
+                    Protected area size of the rare green oasis in Madagascar's
+                    arid region
                   </p>
                 </div>
               </div>
 
-              {/* Destinations */}
+              {/* Firebreaks */}
               <div className="group bg-[#e8e4d5]/50 p-6 rounded-sm transition-all duration-500 hover:bg-[#e8e4d5] hover:shadow-md hover:-translate-y-1 hover:border-t-2 hover:border-[#c5ad6a]">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-[#27694F]/10 flex items-center justify-center mb-4 group-hover:bg-[#27694F]/20 transition-colors duration-500 relative overflow-hidden">
@@ -439,15 +449,15 @@ export default function BaliLandingPage() {
                     </svg>
                   </div>
                   <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#27694F] transition-colors duration-500">
-                    <span className="inline-block" data-count="127">
-                      127
+                    <span className="inline-block" data-count="45">
+                      45
                     </span>
                   </div>
-                  <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">
-                    DESTINATIONS
+                  <div className="text-xs font-medium text-[#5d6152] mb-3 tracking-wider">
+                    KILOMETERS
                   </div>
-                  <p className="text-sm text-[#262b22]/70 leading-relaxed">
-                    Unique destinations included in our tour packages
+                  <p className="text-xs text-[#262b22]/70 leading-relaxed">
+                    Firebreaks built since 2019 to protect the forest from fires
                   </p>
                 </div>
               </div>
@@ -484,15 +494,16 @@ export default function BaliLandingPage() {
                     </svg>
                   </div>
                   <div className="text-5xl font-extralight text-[#262b22] mb-1 group-hover:text-[#27694F] transition-colors duration-500">
-                    <span className="inline-block" data-count="12">
-                      12
+                    <span className="inline-block" data-count="5">
+                      5
                     </span>
                   </div>
-                  <div className="text-sm font-medium text-[#5d6152] mb-3 tracking-wider">
+                  <div className="text-xs font-medium text-[#5d6152] mb-3 tracking-wider">
                     YEARS
                   </div>
-                  <p className="text-sm text-[#262b22]/70 leading-relaxed">
-                    Experience creating unforgettable Bali journeys
+                  <p className="text-xs text-[#262b22]/70 leading-relaxed">
+                    Experience protecting and restoring the Ivohiboro forest
+                    ecosystem
                   </p>
                 </div>
               </div>
@@ -503,66 +514,118 @@ export default function BaliLandingPage() {
           </div>
         </section>
 
-        {/* License to Live Section */}
-        <section className="w-full py-20 bg-[#e8e3d7]">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-light tracking-wide text-center text-[#262b22] mb-16">
-              START YOUR JOURNEY
+        {/* Conservation Efforts Section */}
+        <section className="w-full py-20 overflow-hidden relative">
+          {/* Background image with overlay */}
+          <div className="absolute inset-0 z-0 ">
+            <Image
+              src="/images/Landscape.11.png"
+              alt="Ivohiboro forest landscape"
+              fill
+              className="object-cover filter blur-[2px]"
+            />
+            <div className="absolute inset-0 bg-[#000]/40"></div>
+          </div>
+
+          <div className="container px-4 md:px-6 relative z-10">
+            <h2 className="text-3xl font-light font-nauryz tracking-wide text-center text-[#d8d4c5] mb-16">
+              CONSERVATION EFFORTS
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <div className="flex flex-col items-center bg-[#d8d4c5] p-8 hover:shadow-md transition-all duration-500 group">
-                <div className="w-16 h-16 border border-[#c5ad6a] rounded-full flex items-center justify-center mb-6 group-hover:animate-gentle-float">
-                  <div className="w-12 h-12 border border-[#c5ad6a] rounded-full"></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Firebreaks Card */}
+              <div className="relative h-[450px] group overflow-hidden">
+                <Image
+                  src="/images/Firebreak.1.png"
+                  alt="Firebreaks"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6 w-full">
+                  <div className="mb-2">
+                    <span className="text-xs text-[#c5ad6a] tracking-wider">
+                      CONSERVATION • 05.2023
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-[500]  text-white mb-3">
+                    Firebreaks: Creating Protective Barriers
+                  </h3>
+                  <p className="text-[#e8e3d7]/90 text-xs mb-4">
+                    Over 45 kilometers of firebreaks with two rings to
+                    physically stop fires from reaching the vulnerable forest
+                    ecosystem.
+                  </p>
+                  <Button
+                    variant="link"
+                    className="text-[#c5ad6a] p-0 h-auto text-xs tracking-wider group-hover:text-white transition-colors duration-300"
+                  >
+                    EXPLORE MORE
+                  </Button>
                 </div>
-                <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-4">
-                  ADVENTURE
-                </h3>
-                <p className="text-center text-[#262b22]/70 mb-6">
-                  Discover hidden temples, volcanic landscapes, and ancient
-                  rituals in Bali's diverse terrain.
-                </p>
-                <Button
-                  variant="outline"
-                  className="rounded-none border-[#c5ad6a] text-[#262b22] hover:bg-[#c5ad6a]/10 px-6 py-2 h-auto text-xs tracking-widest mt-auto group-hover:border-[#27694F] transition-colors duration-500"
-                >
-                  EXPLORE
-                </Button>
               </div>
-              <div className="flex flex-col items-center bg-[#d8d4c5] p-8 hover:shadow-md transition-all duration-500 group">
-                <div className="w-16 h-16 border border-[#c5ad6a] rounded-full flex items-center justify-center mb-6 group-hover:animate-gentle-float">
-                  <div className="w-12 h-12 border border-[#c5ad6a] rounded-full"></div>
+
+              {/* Foxhole Forests Card */}
+              <div className="relative h-[450px] group overflow-hidden">
+                <Image
+                  src="/images/Foxhole.Forests.2.png"
+                  alt="Foxhole Forests"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6 w-full">
+                  <div className="mb-2">
+                    <span className="text-xs text-[#c5ad6a] tracking-wider">
+                      RESTORATION • 03.2023
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-[500] text-white mb-3">
+                    The Foxhole Forests Initiative
+                  </h3>
+                  <p className="text-[#e8e3d7]/90 text-xs mb-4">
+                    874 natural nurseries for interior forest trees,
+                    accelerating regeneration with native pioneer species in
+                    harsh grassland conditions.
+                  </p>
+                  <Button
+                    variant="link"
+                    className="text-[#c5ad6a] p-0 h-auto text-xs tracking-wider group-hover:text-white transition-colors duration-300"
+                  >
+                    DISCOVER MORE
+                  </Button>
                 </div>
-                <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-4">
-                  CULTURE
-                </h3>
-                <p className="text-center text-[#262b22]/70 mb-6">
-                  Immerse yourself in Balinese traditions, ceremonies, and the
-                  spiritual practices of local communities.
-                </p>
-                <Button
-                  variant="outline"
-                  className="rounded-none border-[#c5ad6a] text-[#262b22] hover:bg-[#c5ad6a]/10 px-6 py-2 h-auto text-xs tracking-widest mt-auto group-hover:border-[#27694F] transition-colors duration-500"
-                >
-                  DISCOVER
-                </Button>
               </div>
-              <div className="flex flex-col items-center bg-[#d8d4c5] p-8 hover:shadow-md transition-all duration-500 group">
-                <div className="w-16 h-16 border border-[#c5ad6a] rounded-full flex items-center justify-center mb-6 group-hover:animate-gentle-float">
-                  <div className="w-12 h-12 border border-[#c5ad6a] rounded-full"></div>
+
+              {/* Social Enterprise Card */}
+              <div className="relative h-[450px] group overflow-hidden">
+                <Image
+                  src="/images/Rangers.6.png"
+                  alt="Social Enterprise"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6 w-full">
+                  <div className="mb-2">
+                    <span className="text-xs text-[#c5ad6a] tracking-wider">
+                      COMMUNITY • 01.2023
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-[500] text-white mb-3">
+                    Empowering Local Communities
+                  </h3>
+                  <p className="text-[#e8e3d7]/90 text-xs mb-4">
+                    Creating economic opportunities through valuable species
+                    like Sakoa/Marula and Tsiperifery to support long-term
+                    conservation.
+                  </p>
+                  <Button
+                    variant="link"
+                    className="text-[#c5ad6a] p-0 h-auto text-xs tracking-wider group-hover:text-white transition-colors duration-300"
+                  >
+                    SUPPORT NOW
+                  </Button>
                 </div>
-                <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-4">
-                  RELAXATION
-                </h3>
-                <p className="text-center text-[#262b22]/70 mb-6">
-                  Find peace in Bali's serene landscapes, from quiet beaches to
-                  meditation retreats in dry season beauty.
-                </p>
-                <Button
-                  variant="outline"
-                  className="rounded-none border-[#c5ad6a] text-[#262b22] hover:bg-[#c5ad6a]/10 px-6 py-2 h-auto text-xs tracking-widest mt-auto group-hover:border-[#27694F] transition-colors duration-500"
-                >
-                  UNWIND
-                </Button>
               </div>
             </div>
           </div>
@@ -573,32 +636,33 @@ export default function BaliLandingPage() {
           <div className="container px-4 md:px-6">
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-12 lg:col-span-4 mb-8 lg:mb-0">
-                <h2 className="text-3xl font-light tracking-wide text-[#262b22] mb-6">
+                <h2 className="text-3xl font-light font-nauryz tracking-wide text-[#27694F] mb-6">
                   GALLERY
                 </h2>
                 <p className="text-[#262b22]/70 mb-8 leading-relaxed">
-                  Experience the beauty of Bali's dry landscapes, from golden
-                  rice terraces to ancient stone temples. Our gallery captures
-                  the essence of this magical island during its most serene
-                  season.
+                  Explore the unique biodiversity and conservation efforts of
+                  the Ivohiboro protected area. Our gallery captures the essence
+                  of this rare green oasis in Madagascar's arid Ihorombe region.
                 </p>
-                <Button
-                  variant="outline"
-                  className="rounded-none border-[#27694F] text-[#262b22] hover:bg-[#27694F]/10 px-8 py-2 h-auto text-xs tracking-widest"
-                >
-                  VIEW ALL
-                </Button>
+                <Link href={'/gallery'}>
+                  <Button
+                    variant="outline"
+                    className="rounded-none border-[#27694F] text-[#c5ad6a] bg-[#000]/100 hover:bg-[#000]/70 hover:text-[#c5ad6a] px-8 py-2 h-auto text-xs tracking-widest"
+                  >
+                    VIEW ALL
+                  </Button>
+                </Link>
               </div>
               <div className="col-span-12 lg:col-span-8">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {[...Array(6)].map((_, i) => (
+                  {galleryImages.map((_, i) => (
                     <div
                       key={i}
                       className="relative aspect-square overflow-hidden group cursor-pointer"
                     >
                       <Image
-                        src={`/images/Crossandra-sp.png`}
-                        alt={`Bali scenery ${i + 1}`}
+                        src={_}
+                        alt={`Ivohiboro forest ${i + 1}`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105 filter sepia-[0.2]"
                       />
@@ -615,45 +679,48 @@ export default function BaliLandingPage() {
           </div>
         </section>
 
-        {/* A Place to Be Section */}
+        {/* About Ivohiboro Section */}
         <section className="w-full py-20 bg-[#e8e3d7]">
           <div className="container px-4 md:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 order-2 lg:order-1">
-                <div className="bg-[#27694F] p-8 lg:p-12 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#27694F] via-[#c5ad6a]/20 to-[#27694F] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-                  <h2 className="text-3xl font-light tracking-wide text-[#e8e3d7] mb-8 relative z-10">
-                    HELLO, BEAUTIFUL SOUL
+                <div className="bg-[#174B4C]/90 p-8 lg:p-12 relative overflow-hidden group">
+                  <h2 className="text-3xl font-nauryz font-light tracking-wide text-[#e8e3d7] mb-8 relative z-10">
+                    ABOUT IVOHIBORO
                   </h2>
                   <p className="text-[#e8e3d7]/90 mb-6 leading-relaxed relative z-10">
-                    It's no coincidence that Bali is one of the top destinations
-                    for spiritual seekers. The island has natural beauty,
-                    artisan craftsmanship, exotic temples and friendly locals
-                    that make it a place for everyone seeking transformation.
+                    Unlike the grassland and savannah in the surrounding area,
+                    Ivohiboro is not adapted to fires. The firebreaks are
+                    intended to keep forest from burning and allow natural
+                    regeneration to occur. Given enough time, the forest will
+                    regrow in unburned areas.
                   </p>
                   <p className="text-[#e8e3d7]/90 mb-8 leading-relaxed relative z-10">
-                    We know that when you're thinking of your journey, choosing
-                    whether you want spiritual growth, adventure, relaxation or
-                    exploration is hard. That's why we're here: providing your
-                    dream experience in Bali's beautiful dry landscapes.
+                    One of the greatest impacts has been on community attitudes
+                    and behavior. We've created over 10,000 employment
+                    opportunities during the construction and maintenance of the
+                    firebreaks. People have used the income to buy food,
+                    supplies, and to send their children to school.
                   </p>
-                  <Button
-                    variant="outline"
-                    className="rounded-none border-[#e8e3d7] text-[#e8e3d7] hover:bg-[#e8e3d7]/10 px-6 py-2 h-auto text-xs tracking-widest relative z-10"
-                  >
-                    LEARN MORE
-                  </Button>
+                  <Link href={'/about'}>
+                    <Button
+                      variant="outline"
+                      className="rounded-none border-[#e8e3d7] bg-transparent text-[#e8e3d7]  px-6 py-2 h-auto text-xs tracking-widest relative z-10"
+                    >
+                      LEARN MORE
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="lg:col-span-5 order-1 lg:order-2">
                 <div className="relative aspect-[3/4] w-full">
                   <Image
-                    src="/placeholder.svg?height=1000&width=750"
-                    alt="Woman in traditional Balinese setting"
+                    src="/images/Ring-tailed-Lemur.png"
+                    alt="Ring-tailed Lemur in Ivohiboro forest"
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 border-l-2 border-t-2 border-[#c5ad6a]/30 -translate-x-4 -translate-y-4 pointer-events-none"></div>
+                  <div className="absolute inset-0 border-l-[2.5px] border-t-[2.5px] border-[#d99201]/100 -translate-x-4 -translate-y-4 pointer-events-none"></div>
                 </div>
               </div>
             </div>
@@ -663,117 +730,119 @@ export default function BaliLandingPage() {
         {/* News Section */}
         <section className="w-full py-20 bg-[#d8d4c5]">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-light tracking-wide text-center text-[#262b22] mb-16">
+            <h2 className="text-3xl font-light  font-nauryz tracking-wide text-center text-[#174B4C]/90 mb-16">
               LATEST NEWS
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col bg-[#e8e3d7] p-6 hover:shadow-md transition-all duration-500 group">
                 <div className="relative h-[250px] w-full mb-6 overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=500&width=800"
-                    alt="New beach club opening in Seminyak"
-                    fill
-                    className="object-cover filter sepia-[0.2] transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="text-sm text-[#c5ad6a] mb-2">JUNE 15, 2023</div>
-                <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-3">
-                  New Beach Club Opens in Seminyak
-                </h3>
-                <p className="text-[#262b22]/70 mb-4 leading-relaxed">
-                  Experience the ultimate beachfront luxury at Bali's newest
-                  hotspot, featuring infinity pools and sunset views.
-                </p>
-                <Button
-                  variant="link"
-                  className="text-[#27694F] p-0 h-auto text-sm tracking-wider mt-auto group-hover:text-[#c5ad6a] transition-colors duration-300"
-                >
-                  READ MORE
-                </Button>
-              </div>
-              <div className="flex flex-col bg-[#e8e3d7] p-6 hover:shadow-md transition-all duration-500 group">
-                <div className="relative h-[250px] w-full mb-6 overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=500&width=800"
-                    alt="Traditional Balinese festival"
-                    fill
-                    className="object-cover filter sepia-[0.2] transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="text-sm text-[#c5ad6a] mb-2">MAY 28, 2023</div>
-                <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-3">
-                  Upcoming Cultural Festivals in Ubud
-                </h3>
-                <p className="text-[#262b22]/70 mb-4 leading-relaxed">
-                  Mark your calendars for these authentic Balinese celebrations
-                  that showcase the island's rich cultural heritage.
-                </p>
-                <Button
-                  variant="link"
-                  className="text-[#27694F] p-0 h-auto text-sm tracking-wider mt-auto group-hover:text-[#c5ad6a] transition-colors duration-300"
-                >
-                  READ MORE
-                </Button>
-              </div>
-              <div className="flex flex-col bg-[#e8e3d7] p-6 hover:shadow-md transition-all duration-500 group">
-                <div className="relative h-[250px] w-full mb-6 overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=500&width=800"
-                    alt="New hiking trail in Bali mountains"
+                    src="/images/Crossandra-sp.png"
+                    alt="New Foxhole Forests planted"
                     fill
                     className="object-cover filter sepia-[0.2] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="text-sm text-[#c5ad6a] mb-2">
-                  APRIL 10, 2023
+                  MARCH 15, 2024
                 </div>
                 <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-3">
-                  New Hiking Trail Reveals Hidden Waterfall
+                  484 New Foxhole Forests Planted in 2024
                 </h3>
                 <p className="text-[#262b22]/70 mb-4 leading-relaxed">
-                  Adventure seekers can now explore this newly accessible trail
-                  leading to one of Bali's most spectacular waterfalls.
+                  Our restoration efforts continue to expand with hundreds of
+                  new Foxhole Forests planted this year to accelerate forest
+                  regeneration.
                 </p>
-                <Button
-                  variant="link"
-                  className="text-[#27694F] p-0 h-auto text-sm tracking-wider mt-auto group-hover:text-[#c5ad6a] transition-colors duration-300"
-                >
-                  READ MORE
-                </Button>
+                <Link href={'/articles/article-id'}>
+                  <Button
+                    variant="link"
+                    className="text-[#27694F] p-0 h-auto text-sm tracking-wider mt-auto group-hover:text-[#c5ad6a] transition-colors duration-300"
+                  >
+                    READ MORE
+                  </Button>
+                </Link>
+              </div>
+              <div className="flex flex-col bg-[#e8e3d7] p-6 hover:shadow-md transition-all duration-500 group">
+                <div className="relative h-[250px] w-full mb-6 overflow-hidden">
+                  <Image
+                    src="/images/Crossandra-sp.png"
+                    alt="Sakoa oil social enterprise"
+                    fill
+                    className="object-cover filter sepia-[0.2] transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="text-sm text-[#c5ad6a] mb-2">
+                  FEBRUARY 28, 2024
+                </div>
+                <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-3">
+                  Sakoa Oil Social Enterprise Launches
+                </h3>
+                <p className="text-[#262b22]/70 mb-4 leading-relaxed">
+                  New initiative creates economic opportunities for local
+                  communities while incentivizing protection of valuable native
+                  tree species.
+                </p>
+                <Link href={'/articles/article-id'}>
+                  <Button
+                    variant="link"
+                    className="text-[#27694F] p-0 h-auto text-sm tracking-wider mt-auto group-hover:text-[#c5ad6a] transition-colors duration-300"
+                  >
+                    READ MORE
+                  </Button>
+                </Link>
+              </div>
+              <div className="flex flex-col bg-[#e8e3d7] p-6 hover:shadow-md transition-all duration-500 group">
+                <div className="relative h-[250px] w-full mb-6 overflow-hidden">
+                  <Image
+                    src="/images/Crossandra-sp.png"
+                    alt="Firebreak expansion project"
+                    fill
+                    className="object-cover filter sepia-[0.2] transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="text-sm text-[#c5ad6a] mb-2">
+                  JANUARY 10, 2024
+                </div>
+                <h3 className="text-xl font-light tracking-wide text-[#262b22] mb-3">
+                  Firebreak Expansion Project Announced
+                </h3>
+                <p className="text-[#262b22]/70 mb-4 leading-relaxed">
+                  Plans unveiled to add 25 kilometers of new firebreaks over the
+                  next two years to enhance forest protection.
+                </p>
+                <Link href={'/articles/article-id'}>
+                  <Button
+                    variant="link"
+                    className="text-[#27694F] p-0 h-auto text-sm tracking-wider mt-auto group-hover:text-[#c5ad6a] transition-colors duration-300"
+                  >
+                    READ MORE
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Testimonial Section */}
-        <section className="w-full py-20 bg-[#27694F] text-[#e8e3d7]">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-light tracking-wide text-center mb-16">
-              HEALING WORDS
+        {/* Impact Stories Section */}
+        <section className="w-full py-20 bg-[#174B4C]/90 ">
+          <div className="container px-4 md:px-6 text-center">
+            <h2 className="text-3xl font-light tracking-wide font-nauryz text-[#fff]/80 mb-8">
+              GET INVOLVED
             </h2>
-            <div className="max-w-3xl mx-auto">
-              <div className="relative">
-                <div className="absolute -top-8 left-0 text-[#c5ad6a] text-6xl opacity-30">
-                  "
-                </div>
-                <p className="text-xl font-light italic text-center leading-relaxed mb-8 relative z-10">
-                  Working with The Bali Way has been a life-changing experience.
-                  The guides embody what true guidance should be, balancing
-                  respect for my journey and the flow of nature. I've gained a
-                  level of confidence and self-worth I couldn't have imagined.
-                  They have an incredible knack for reading energy and guiding
-                  me to what I need in the moment. Safe, authentic, and
-                  inspiring.
-                </p>
-                <div className="absolute -bottom-8 right-0 text-[#c5ad6a] text-6xl opacity-30">
-                  "
-                </div>
-              </div>
-              <div className="text-center">
-                <span className="inline-block h-[1px] w-8 bg-[#c5ad6a] mb-4"></span>
-                <p className="text-center text-[#e8e3d7]/80">— KARA</p>
-              </div>
-            </div>
+            <p className="text-[#fff]/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+              Ready to help protect the unique biodiversity of Ivohiboro? Your
+              support can make a difference in our conservation and restoration
+              efforts.
+            </p>
+            <Link href={'/become-volunteer'}>
+              <Button
+                variant="outline"
+                className="rounded-none border-[#fff]/80 bg-transparent text-[#fff]/80  px-6 py-2 h-auto text-xs tracking-widest relative z-10"
+              >
+                BECOME VOLUNTEER
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -781,10 +850,10 @@ export default function BaliLandingPage() {
         <section id="contact" className="w-full py-20 bg-[#e8e3d7]">
           <div className="container px-4 md:px-6">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-light tracking-wide text-center text-[#262b22] mb-16">
+              <h2 className="text-3xl font-light font-nauryz tracking-wide text-center text-[#262b22] mb-16">
                 CONTACT US
               </h2>
-              <form className="space-y-6 bg-[#d8d4c5] p-8 lg:p-12 border-l-2 border-[#c5ad6a]/30">
+              <form className="space-y-6 bg-[#d8d4c5] p-8 lg:p-12 border-2 border-[#d99201]/30">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label
@@ -796,7 +865,7 @@ export default function BaliLandingPage() {
                     <Input
                       id="name"
                       placeholder="Your name"
-                      className="border-[#27694F] focus:border-[#c5ad6a] focus:ring-0 rounded-none h-12 bg-transparent"
+                      className="border-[#27694F] focus:border-[#c5ad6a] text-xs focus:ring-0 rounded-none h-12 bg-transparent"
                     />
                   </div>
                   <div className="space-y-2">
@@ -841,7 +910,7 @@ export default function BaliLandingPage() {
                   />
                 </div>
                 <div className="text-center pt-4">
-                  <Button className="rounded-none bg-[#27694F] text-white hover:bg-[#27694F]/90 px-8 py-3 h-auto text-sm tracking-widest relative overflow-hidden group">
+                  <Button className="rounded-none bg-[#47622b] text-white hover:bg-[#27694F]/90 px-8 py-3 h-auto text-sm tracking-widest relative overflow-hidden group">
                     <span className="absolute -inset-x-1 -bottom-1 h-1 bg-[#c5ad6a] opacity-50 group-hover:animate-[pulse_4s_ease-in-out_infinite]"></span>
                     <span className="relative z-10">SEND MESSAGE</span>
                   </Button>
@@ -851,105 +920,90 @@ export default function BaliLandingPage() {
           </div>
         </section>
 
-        {/* Start Your Journey Section */}
-        <section className="w-full py-20 bg-[#d8d4c5]">
+        {/* Support Conservation Section */}
+        {/* <section className="w-full py-20 bg-[#d8d4c5]">
           <div className="container px-4 md:px-6 text-center">
             <h2 className="text-3xl font-light tracking-wide text-[#262b22] mb-8">
-              BECOME A TRAVELER
+              SUPPORT OUR CONSERVATION
             </h2>
             <p className="text-[#262b22]/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Ready to experience the magic of Bali's dry season beauty? Contact
-              us today to plan your transformative journey.
+              Ready to help protect the unique biodiversity of Ivohiboro? Your
+              support can make a difference in our conservation and restoration
+              efforts.
             </p>
             <Button className="rounded-none bg-[#27694F] text-white hover:bg-[#27694F]/90 px-8 py-3 h-auto text-sm tracking-widest relative overflow-hidden group shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 animate-soft-glow">
               <span className="absolute inset-0 w-0 bg-gradient-to-r from-[#27694F] to-[#c5ad6a] transition-all duration-1000 group-hover:w-full"></span>
-              <span className="relative z-10">PLAN YOUR TRIP</span>
+              <span className="relative z-10">DONATE NOW</span>
             </Button>
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-12 bg-[#27694F] text-[#e8e3d7]">
+      <footer className="w-full py-12 bg-[#174b4c] text-[#e8e3d7]">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <span className="text-xl font-light tracking-widest">
-                THE BALI WAY
+                IVOHIBORO
               </span>
               <p className="mt-4 text-sm text-[#e8e3d7]/70">
-                Your gateway to transformation on the magical island of Bali.
+                Protecting Madagascar's rare 1,400-hectare green oasis in the
+                arid Ihorombe region.
               </p>
             </div>
             <div>
-              <h3 className="text-sm font-medium mb-4">Explore</h3>
+              <h3 className="text-sm font-medium mb-4">Actions</h3>
               <nav className="flex flex-col space-y-2 text-sm text-[#e8e3d7]/70">
                 <Link
-                  href="#"
+                  href="/donate"
                   className="hover:text-[#c5ad6a] transition-colors duration-300"
                 >
-                  Adventures
+                  Donate
                 </Link>
                 <Link
-                  href="#"
+                  href="/become-volunteer"
                   className="hover:text-[#c5ad6a] transition-colors duration-300"
                 >
-                  Culture
-                </Link>
-                <Link
-                  href="#"
-                  className="hover:text-[#c5ad6a] transition-colors duration-300"
-                >
-                  Relaxation
-                </Link>
-                <Link
-                  href="#"
-                  className="hover:text-[#c5ad6a] transition-colors duration-300"
-                >
-                  Cuisine
+                  Get involved
                 </Link>
               </nav>
             </div>
             <div>
-              <h3 className="text-sm font-medium mb-4">Company</h3>
+              <h3 className="text-sm font-medium mb-4">Organization</h3>
               <nav className="flex flex-col space-y-2 text-sm text-[#e8e3d7]/70">
                 <Link
-                  href="#"
+                  href="/about"
                   className="hover:text-[#c5ad6a] transition-colors duration-300"
                 >
                   About Us
                 </Link>
                 <Link
-                  href="#"
+                  href="/partners"
                   className="hover:text-[#c5ad6a] transition-colors duration-300"
                 >
-                  Our Team
+                  Our Partners
                 </Link>
                 <Link
-                  href="#"
+                  href="/gallery"
                   className="hover:text-[#c5ad6a] transition-colors duration-300"
                 >
-                  Testimonials
-                </Link>
-                <Link
-                  href="#"
-                  className="hover:text-[#c5ad6a] transition-colors duration-300"
-                >
-                  Contact
+                  Gallery
                 </Link>
               </nav>
             </div>
             <div>
               <h3 className="text-sm font-medium mb-4">Contact</h3>
               <nav className="flex flex-col space-y-2 text-sm text-[#e8e3d7]/70">
-                <p>info@thebaliway.com</p>
-                <p>+62 123 456 7890</p>
-                <p>Jl. Raya Ubud, Bali, Indonesia</p>
+                <p>info@ivohiboro.org</p>
+                <p>+261 34 567 8901</p>
+                <p>Ihorombe Region, Madagascar</p>
               </nav>
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-[#e8e3d7]/20 text-center text-sm text-[#e8e3d7]/70">
-            &copy; {new Date().getFullYear()} The Bali Way. All rights reserved.
+            &copy; {new Date().getFullYear()} Ivohiboro Conservation Project.
+            All rights reserved.
           </div>
         </div>
       </footer>

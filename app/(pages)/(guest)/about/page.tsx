@@ -1,69 +1,69 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
 
 const teamMembers = [
   {
     id: 1,
-    name: 'Maya Dewi',
-    role: 'Founder & Lead Guide',
+    name: 'Dr. Rakoto Andriamaro',
+    role: 'Conservation Director',
     image: '/placeholder.svg?height=400&width=400',
-    bio: 'Born and raised in Ubud, Maya combines her deep knowledge of Balinese spiritual traditions with over 15 years of experience guiding transformational journeys.',
+    bio: 'With over 15 years of experience in Madagascar conservation, Dr. Andriamaro leads our scientific research and restoration strategies for Ivohiboro.',
   },
   {
     id: 2,
-    name: 'Wayan Sukadana',
-    role: 'Spiritual Guide & Healer',
+    name: 'Solofo Razafindrakoto',
+    role: 'Community Outreach Manager',
     image: '/placeholder.svg?height=400&width=400',
-    bio: 'A sixth-generation Balinese healer (Balian), Wayan practices traditional healing methods passed down through his family.',
+    bio: 'Born in the region, Solofo bridges the gap between conservation efforts and local communities, ensuring sustainable development.',
   },
   {
     id: 3,
-    name: 'Sarah Johnson',
-    role: 'Yoga & Meditation Instructor',
+    name: 'Dr. Emma Johnson',
+    role: 'Biodiversity Specialist',
     image: '/placeholder.svg?height=400&width=400',
-    bio: 'With certifications in multiple yoga traditions and over a decade of teaching experience, Sarah guides our guests through mindful movement and meditation practices.',
+    bio: "Specializing in endangered species conservation, Emma monitors and documents Ivohiboro's unique wildlife, including the rare Ring-tailed Lemurs.",
   },
   {
     id: 4,
-    name: 'Ketut Arta',
-    role: 'Cultural Ambassador',
+    name: 'Jean-Claude Ratsimbazafy',
+    role: 'Restoration Technician',
     image: '/placeholder.svg?height=400&width=400',
-    bio: 'An expert in Balinese arts, ceremonies, and traditions, Ketut helps bridge cultural understanding for our guests.',
+    bio: 'An expert in the Foxhole Forest technique, Jean-Claude leads our field teams in implementing restoration activities throughout the region.',
   },
 ];
 
 const partners = [
   {
     id: 1,
-    name: 'Ubud Healing Center',
+    name: 'MICET',
     logo: '/placeholder.svg?height=120&width=120',
-    slug: 'ubud-healing-center',
+    slug: 'micet',
   },
   {
     id: 2,
-    name: 'Bali Eco Stays',
+    name: 'Centre ValBio',
     logo: '/placeholder.svg?height=120&width=120',
-    slug: 'bali-eco-stays',
+    slug: 'centre-valbio',
   },
   {
     id: 3,
-    name: 'Sacred Temples Foundation',
+    name: 'Rainforest Trust',
     logo: '/placeholder.svg?height=120&width=120',
-    slug: 'sacred-temples-foundation',
+    slug: 'rainforest-trust',
   },
   {
     id: 4,
-    name: 'Balinese Arts Collective',
+    name: 'Madagascar National Parks',
     logo: '/placeholder.svg?height=120&width=120',
-    slug: 'balinese-arts-collective',
+    slug: 'madagascar-national-parks',
   },
   {
     id: 5,
-    name: 'Ocean Conservation Bali',
+    name: 'The Phoenix Conservancy',
     logo: '/placeholder.svg?height=120&width=120',
-    slug: 'ocean-conservation-bali',
+    slug: 'phoenix-conservancy',
   },
 ];
 
@@ -75,7 +75,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/Crossandra-sp.png"
-            alt="Balinese temple at sunset"
+            alt="Ivohiboro forest landscape"
             fill
             priority
             className="object-cover filter brightness-[0.85] contrast-[1.05] saturate-[1.05]"
@@ -90,8 +90,8 @@ export default function AboutPage() {
               Our Story
             </h1>
             <p className="text-lg text-[#e8e4d5]/90 font-light leading-relaxed">
-              Discover the journey that led us to create transformative
-              experiences in Bali's sacred landscapes.
+              Discover how we're protecting and restoring Madagascar's rare
+              Ivohiboro forest and supporting the communities that depend on it.
             </p>
           </div>
         </div>
@@ -106,26 +106,26 @@ export default function AboutPage() {
                 OUR MISSION
               </h2>
               <p className="text-[#3c4a3a]/80 mb-6 leading-relaxed">
-                The Bali Way was born from a deep love for Bali's spiritual
-                traditions and natural beauty. Our founder, Maya Dewi, grew up
-                immersed in Balinese culture and witnessed how transformative
-                these experiences could be for visitors seeking meaning and
-                connection.
+                Ivohiboro (pronounced eev-wee-bore) is an isolated patch of
+                rainforest in southeastern Madagascar. Despite its small size of
+                just 4.7 square miles (about a fifth the size of Manhattan
+                Island), Ivohiboro is home to numerous endangered species,
+                including a rare montane rainforest population of Ring-tailed
+                Lemurs.
               </p>
               <p className="text-[#3c4a3a]/80 mb-8 leading-relaxed">
-                What began as informal guidance for friends has evolved into a
-                holistic approach to experiencing Bali's sacred places, rituals,
-                and healing traditions. We believe in sustainable tourism that
-                honors local communities while providing authentic experiences
-                for spiritual seekers.
+                The forest is also the surrounding region's only source of
+                drinking water, as the landscape is dominated by arid grassland
+                and savannah. Our mission is to protect this vital ecosystem
+                while improving the lives of local communities who depend on it.
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 border border-[#c4a76c] rounded-full flex items-center justify-center mr-6">
                   <div className="w-8 h-8 border border-[#c4a76c] rounded-full"></div>
                 </div>
                 <p className="text-[#3c4a3a] italic">
-                  "We don't just show you Bali; we help you experience its
-                  soul."
+                  "Protecting Ivohiboro means protecting both biodiversity and
+                  human livelihoods."
                 </p>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
                 <div className="col-span-8 row-span-2 relative">
                   <Image
                     src="/images/Calumma-crypticum.png"
-                    alt="Balinese ceremony"
+                    alt="Ivohiboro forest landscape"
                     fill
                     className="object-cover rounded-sm"
                   />
@@ -147,7 +147,7 @@ export default function AboutPage() {
                 <div className="col-span-4 relative">
                   <Image
                     src="/images/images-2.png"
-                    alt="Rice terraces in Bali"
+                    alt="Ring-tailed Lemur"
                     fill
                     className="object-cover rounded-sm"
                   />
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 <div className="col-span-4 relative">
                   <Image
                     src="/images/Hypoxis-angustifolia.png"
-                    alt="Traditional Balinese offering"
+                    alt="Foxhole Forest restoration site"
                     fill
                     className="object-cover rounded-sm"
                   />
@@ -186,13 +186,13 @@ export default function AboutPage() {
                 <div className="w-12 h-12 border border-[#c4a76c] rounded-full"></div>
               </div>
               <h3 className="text-xl font-light tracking-wide text-[#3c4a3a] mb-4">
-                AUTHENTICITY
+                ECOLOGICAL RESTORATION
               </h3>
               <p className="text-[#3c4a3a]/80">
-                We honor Balinese traditions by presenting them in their true
-                form, without commercialization or cultural appropriation. Every
-                experience we offer is rooted in genuine spiritual practices and
-                local wisdom.
+                We believe in restoring ecosystems to their natural state while
+                enhancing their resilience to future threats. Our Foxhole Forest
+                technique accelerates natural regeneration processes, allowing
+                the forest to expand and thrive.
               </p>
             </div>
 
@@ -201,12 +201,13 @@ export default function AboutPage() {
                 <div className="w-12 h-12 border border-[#c4a76c] rounded-full"></div>
               </div>
               <h3 className="text-xl font-light tracking-wide text-[#3c4a3a] mb-4">
-                SUSTAINABILITY
+                COMMUNITY EMPOWERMENT
               </h3>
               <p className="text-[#3c4a3a]/80">
-                We are committed to environmental stewardship and supporting
-                local communities. Our practices minimize ecological impact
-                while ensuring that tourism benefits Balinese people directly.
+                Conservation cannot succeed without addressing human needs. We
+                create economic opportunities through employment and social
+                enterprise programs, ensuring that protecting Ivohiboro also
+                improves local livelihoods.
               </p>
             </div>
 
@@ -215,13 +216,13 @@ export default function AboutPage() {
                 <div className="w-12 h-12 border border-[#c4a76c] rounded-full"></div>
               </div>
               <h3 className="text-xl font-light tracking-wide text-[#3c4a3a] mb-4">
-                TRANSFORMATION
+                SUSTAINABLE SOLUTIONS
               </h3>
               <p className="text-[#3c4a3a]/80">
-                We believe in the power of Bali to catalyze personal growth. Our
-                experiences are designed to facilitate meaningful change,
-                whether through spiritual practice, cultural immersion, or
-                connection with nature.
+                We develop self-sustaining conservation models that continue to
+                function long after initial funding ends. Our social enterprise
+                initiatives create economic engines that fund ongoing
+                restoration and protection efforts.
               </p>
             </div>
           </div>
@@ -236,8 +237,8 @@ export default function AboutPage() {
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="/placeholder.svg?height=1000&width=800"
-                  alt="Meditation in Bali temple"
+                  src="/images/Ring-tailed-Lemur.png"
+                  alt="Firebreak construction at Ivohiboro"
                   fill
                   className="object-cover rounded-sm"
                 />
@@ -255,30 +256,29 @@ export default function AboutPage() {
                 OUR APPROACH
               </h2>
               <p className="text-[#3c4a3a]/80 mb-6 leading-relaxed">
-                The Bali Way offers more than typical tourist experiences. We
-                create journeys that engage all the senses and connect you with
-                the island's spiritual essence. Each itinerary is thoughtfully
-                crafted to balance cultural immersion, personal growth, and
-                respectful exploration.
+                Our approach to conservation integrates three essential
+                components: protection, restoration, and community development.
+                We began in 2019 with emergency construction of firebreaks to
+                protect all sides of Ivohiboro from wildfires that threatened
+                its existence.
               </p>
               <p className="text-[#3c4a3a]/80 mb-6 leading-relaxed">
-                Our guides are not just knowledgeable about Balinese
-                culture—they embody it. Many are practitioners of traditional
-                healing arts, meditation, or dance, bringing depth and
-                authenticity to your experience. We keep our groups small to
-                ensure personal attention and minimize our impact on sacred
-                sites.
+                For restoration, we developed the innovative "Foxhole Forest"
+                technique, which creates natural nurseries for interior forest
+                trees. This accelerates regeneration with native pioneer species
+                even in harsh grassland conditions, allowing the forest to
+                expand over time.
               </p>
               <p className="text-[#3c4a3a]/80 mb-8 leading-relaxed">
-                Whether you're participating in a water purification ritual,
-                learning traditional offerings, or meditating in an ancient
-                temple, we provide the cultural context and spiritual
-                preparation to make these experiences meaningful and
-                transformative.
+                Recognizing that nearby communities earn an average of just $50
+                USD per household per year, we've integrated social enterprise
+                programs into our conservation work. Projects like our Sakoa and
+                Voatsiperifery Pepper initiatives create economic opportunities
+                while incentivizing forest protection and restoration.
               </p>
-              <Button className="rounded-none bg-[#3c4a3a] text-white hover:bg-[#2a362a] px-8 py-3 h-auto text-sm tracking-widest">
-                EXPLORE OUR JOURNEYS
-              </Button>
+              {/* <Button className="rounded-none bg-[#3c4a3a] text-white hover:bg-[#2a362a] px-8 py-3 h-auto text-sm tracking-widest">
+                EXPLORE OUR PROJECTS
+              </Button> */}
             </div>
           </div>
         </div>
@@ -291,10 +291,9 @@ export default function AboutPage() {
             OUR TEAM
           </h2>
           <p className="text-center text-[#3c4a3a]/80 max-w-3xl mx-auto mb-16">
-            Meet the passionate individuals who make The Bali Way experience so
-            special. Our diverse team combines local wisdom with international
-            expertise to create transformative journeys that honor Bali's rich
-            spiritual heritage.
+            Meet the dedicated conservationists and community leaders who make
+            our work at Ivohiboro possible. Our diverse team combines scientific
+            expertise with local knowledge to protect this unique ecosystem.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -348,9 +347,9 @@ export default function AboutPage() {
             OUR PARTNERS
           </h2>
           <p className="text-center text-[#3c4a3a]/80 max-w-3xl mx-auto mb-16">
-            We collaborate with these exceptional organizations to create
-            authentic, transformative experiences while supporting local
-            communities and preserving Bali's natural and cultural heritage.
+            Our conservation efforts would not be possible without close
+            collaboration with these organizations. Together, we're protecting
+            Ivohiboro's biodiversity and supporting local communities.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -395,36 +394,84 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full py-20 bg-[#3c4a3a] text-white">
-        <div className="container px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-light tracking-wide mb-6">
-            JOIN OUR JOURNEY
+      {/* Success Section */}
+      <section className="w-full py-20 bg-[#27694F] text-white">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-3xl font-light tracking-wide text-center mb-12">
+            OUR SUCCESS
           </h2>
-          <p className="max-w-2xl mx-auto mb-10 leading-relaxed text-white/80">
-            Experience the transformative power of Bali's spiritual traditions
-            and natural beauty. Let us guide you on a journey of discovery,
-            healing, and connection.
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="bg-white/10 p-6 rounded-sm text-center">
+              <div className="text-5xl font-light text-[#c5ad6a] mb-3">3</div>
+              <p className="text-white/90">
+                Wildfires near the forest boundary in the last four years,
+                compared to dozens annually before our intervention
+              </p>
+            </div>
+
+            <div className="bg-white/10 p-6 rounded-sm text-center">
+              <div className="text-5xl font-light text-[#c5ad6a] mb-3">
+                7,000+
+              </div>
+              <p className="text-white/90">
+                Employment opportunities created for local communities through
+                our conservation initiatives
+              </p>
+            </div>
+
+            <div className="bg-white/10 p-6 rounded-sm text-center">
+              <div className="text-5xl font-light text-[#c5ad6a] mb-3">6M</div>
+              <p className="text-white/90">
+                Tree seeds planted in 874 Foxhole Forests to accelerate natural
+                regeneration
+              </p>
+            </div>
+
+            <div className="bg-white/10 p-6 rounded-sm text-center">
+              <div className="text-5xl font-light text-[#c5ad6a] mb-3">
+                47km
+              </div>
+              <p className="text-white/90">
+                Dual firebreaks constructed to completely surround and protect
+                Ivohiboro
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center text-white/80 max-w-3xl mx-auto mb-10">
+            We've achieved remarkable success in Ivohiboro. For the first time
+            in over a century, wildfires have been effectively controlled. Our
+            social enterprise programs have begun generating sustainable
+            funding, creating a model for long-term conservation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="rounded-none bg-[#c4a76c] text-[#262b22] hover:bg-[#d3bb8e] px-8 py-3 h-auto text-sm tracking-widest">
-              PLAN YOUR JOURNEY
+              SUPPORT OUR WORK
             </Button>
             <Button
               variant="outline"
               className="rounded-none border-white text-white hover:bg-white/10 px-8 py-3 h-auto text-sm tracking-widest"
             >
-              CONTACT US
+              LEARN MORE
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Fixed Donate Button */}
-      <div className="fixed bottom-6 right-6">
-        <Button className="bg-[#c5ad6a] text-white hover:bg-[#b39c59]">
-          DONATE
-        </Button>
+      <div className="fixed bottom-8 right-8 z-50">
+        <Link href={'/donate'}>
+          {' '}
+          <Button className="rounded-none bg-[#d99201] text-white hover:bg-[#27694F]/90 px-6 py-5 h-auto shadow-lg flex items-center gap-2 group transition-all duration-500 hover:scale-105 border border-[#c5ad6a]/30  hover:animate-none relative overflow-hidden">
+            <span className="absolute inset-0 bg-gradient-to-r from-[#27694F] to-[#c5ad6a] opacity-0 group-hover:opacity-80 transition-opacity duration-1000"></span>
+            <Heart className="h-5 w-5 group-hover:text-white transition-colors relative z-10" />
+            <span className="text-sm tracking-widest font-light relative z-10">
+              DONATE
+            </span>
+          </Button>
+        </Link>
       </div>
     </div>
   );
